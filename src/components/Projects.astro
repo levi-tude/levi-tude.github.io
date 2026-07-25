@@ -1,0 +1,100 @@
+---
+import type { Lang } from '../i18n/ui';
+import { t, pathFor } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const projects = [
+  {
+    badge: t(lang, 'bylaBadge'),
+    title: t(lang, 'bylaTitle'),
+    blurb: t(lang, 'bylaBlurb'),
+    stack: t(lang, 'stackByla'),
+    href: pathFor(lang, 'byla'),
+    image: '/images/byla/byla-visao-geral.webp',
+    alt: lang === 'pt'
+      ? 'Painel Visão geral do Byla Financeiro com dados fictícios'
+      : 'Byla Financeiro overview dashboard with fictional data',
+    external: null as string | null,
+  },
+  {
+    badge: t(lang, 'explBadge'),
+    title: t(lang, 'explTitle'),
+    blurb: t(lang, 'explBlurb'),
+    stack: t(lang, 'stackExpl'),
+    href: pathFor(lang, 'explicasurf'),
+    image: '/images/explicasurf/explicasurf-home-stella.png',
+    alt: lang === 'pt'
+      ? 'Home do ExplicaSurf com Stella Maris, Salvador'
+      : 'ExplicaSurf home highlighting Stella Maris, Salvador',
+    external: 'https://explicasurfstella.com.br',
+  },
+  {
+    badge: t(lang, 'commercialBadge'),
+    title: t(lang, 'commercialTitle'),
+    blurb: t(lang, 'commercialBlurb'),
+    stack: t(lang, 'stackCommercial'),
+    href: null as string | null,
+    image: '/images/explicasurf/explicasurf-gerar-explicacao-ia.png',
+    alt: lang === 'pt'
+      ? 'Interface para gerar explicação com IA'
+      : 'UI to generate an AI explanation',
+    external: null,
+  },
+];
+---
+
+<section id="projetos" class="bg-sand px-5 py-20">
+  <div class="mx-auto max-w-5xl">
+    <div class="mb-12 max-w-2xl">
+      <h2 class="font-display text-3xl font-bold tracking-tight text-ocean sm:text-4xl">
+        {t(lang, 'projectsTitle')}
+      </h2>
+      <p class="mt-3 text-muted leading-relaxed">{t(lang, 'projectsLead')}</p>
+    </div>
+
+    <div class="space-y-14">
+      {
+        projects.map((p, i) => (
+          <article class={`grid gap-6 lg:grid-cols-2 lg:gap-10 ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
+            <div class="overflow-hidden rounded-2xl border border-ocean/10 bg-white shadow-sm">
+              <img src={p.image} alt={p.alt} class="h-full w-full object-cover object-top" loading="lazy" width="1200" height="675" />
+            </div>
+            <div class="flex flex-col justify-center">
+              <span class="mb-3 inline-flex w-fit rounded-full bg-ocean/8 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-tide">
+                {p.badge}
+              </span>
+              <h3 class="font-display text-2xl font-bold text-ocean">{p.title}</h3>
+              <p class="mt-3 text-muted leading-relaxed">{p.blurb}</p>
+              <p class="mt-4 text-sm text-ocean/70">{p.stack}</p>
+              <div class="mt-6 flex flex-wrap gap-3">
+                {p.href && (
+                  <a
+                    href={p.href}
+                    class="inline-flex rounded-full bg-ocean px-4 py-2 text-sm font-semibold text-foam transition hover:bg-deep"
+                  >
+                    {t(lang, 'readCase')}
+                  </a>
+                )}
+                {p.external && (
+                  <a
+                    href={p.external}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex rounded-full border border-ocean/20 px-4 py-2 text-sm font-semibold text-ocean transition hover:border-tide hover:text-tide"
+                  >
+                    {t(lang, 'visitLive')}
+                  </a>
+                )}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

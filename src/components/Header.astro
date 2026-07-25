@@ -1,0 +1,38 @@
+---
+import type { Lang } from '../i18n/ui';
+import { t, otherLang, pathFor, routes } from '../i18n/ui';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const switchTo = otherLang(lang);
+const switchHref = routes[switchTo].home;
+---
+
+<header class="sticky top-0 z-40 border-b border-white/10 bg-ink/80 backdrop-blur-md">
+  <div class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-5 py-3.5">
+    <a href={pathFor(lang, 'home')} class="font-display text-lg font-bold tracking-tight text-foam">
+      {t(lang, 'brand')}
+    </a>
+    <nav class="flex items-center gap-1 text-sm text-mist/90 sm:gap-2">
+      <a class="rounded-md px-2.5 py-1.5 hover:bg-white/5 hover:text-foam" href={`${pathFor(lang, 'home')}#projetos`}>
+        {t(lang, 'navProjects')}
+      </a>
+      <a class="rounded-md px-2.5 py-1.5 hover:bg-white/5 hover:text-foam" href={`${pathFor(lang, 'home')}#sobre`}>
+        {t(lang, 'navAbout')}
+      </a>
+      <a class="rounded-md px-2.5 py-1.5 hover:bg-white/5 hover:text-foam" href={`${pathFor(lang, 'home')}#contato`}>
+        {t(lang, 'navContact')}
+      </a>
+      <a
+        class="ml-1 rounded-md border border-tide/40 px-2.5 py-1.5 text-tide-bright hover:bg-tide/15"
+        href={switchHref}
+        hreflang={switchTo === 'pt' ? 'pt-BR' : 'en'}
+      >
+        {t(lang, 'langLabel')}
+      </a>
+    </nav>
+  </div>
+</header>
