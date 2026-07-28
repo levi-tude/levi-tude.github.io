@@ -1,69 +1,39 @@
 ---
-import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { t, pathFor } from '../../../i18n/ui';
+import CasePage from '../../../components/CasePage.astro';
 
 const lang = 'en' as const;
 
-const shots = [
-  { src: '/images/explicasurf/explicasurf-home-stella.png', alt: 'ExplicaSurf home — Stella Maris' },
-  { src: '/images/explicasurf/explicasurf-condicoes-mar.png', alt: 'Sea and weather conditions card' },
-  { src: '/images/explicasurf/explicasurf-gerar-explicacao-ia.png', alt: 'Personalize and generate AI explanation' },
-  { src: '/images/explicasurf/explicasurf-card-explicacao-ui.png', alt: 'Personalized explanation card with TTS' },
-  { src: '/images/explicasurf/explicasurf-grafico-ondas.png', alt: 'Wave height and period chart' },
-  { src: '/images/explicasurf/explicasurf-grafico-mare.png', alt: 'Tide chart' },
-  { src: '/images/explicasurf/explicasurf-login.png', alt: 'ExplicaSurf login screen' },
-  { src: '/images/explicasurf/explicasurf-arquitetura.png', alt: 'ExplicaSurf architecture diagram' },
+const uiShots = [
+  { src: '/images/explicasurf/explicasurf-home-stella.png', alt: 'ExplicaSurf home — Stella Maris', caption: 'Home — Stella Maris' },
+  { src: '/images/explicasurf/explicasurf-condicoes-mar.png', alt: 'Sea and weather conditions card', caption: 'Sea & weather conditions' },
+  { src: '/images/explicasurf/explicasurf-gerar-explicacao-ia.png', alt: 'Personalize and generate AI explanation', caption: 'Generate AI explanation' },
+  { src: '/images/explicasurf/explicasurf-card-explicacao-ui.png', alt: 'Personalized explanation card with TTS', caption: 'Personalized explanation + TTS' },
+  { src: '/images/explicasurf/explicasurf-grafico-ondas.png', alt: 'Wave height and period chart', caption: 'Wave chart' },
+  { src: '/images/explicasurf/explicasurf-grafico-mare.png', alt: 'Tide chart', caption: 'Tide chart' },
+  { src: '/images/explicasurf/explicasurf-login.png', alt: 'ExplicaSurf login screen', caption: 'Login' },
+];
+
+const diagramShots = [
+  { src: '/images/explicasurf/explicasurf-arquitetura.png', alt: 'ExplicaSurf architecture diagram', caption: 'Architecture' },
 ];
 ---
 
-<BaseLayout lang={lang} title={`${t(lang, 'explPageTitle')} — Levi Tude`}>
-  <article class="px-5 py-14">
-    <div class="mx-auto max-w-3xl">
-      <a href={pathFor(lang, 'home')} class="text-sm font-medium text-tide hover:text-tide-bright">{t(lang, 'backHome')}</a>
-      <p class="mt-6 text-xs font-semibold uppercase tracking-[0.16em] text-tide">{t(lang, 'explBadge')}</p>
-      <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ocean">{t(lang, 'explPageTitle')}</h1>
-      <p class="mt-4 text-lg text-muted leading-relaxed">{t(lang, 'explPageLead')}</p>
-      <p class="mt-2 text-sm text-ocean/70">{t(lang, 'stackExpl')}</p>
-
-      <div class="mt-10 space-y-8">
-        <section>
-          <h2 class="font-display text-xl font-bold text-ocean">{t(lang, 'explProblemTitle')}</h2>
-          <p class="mt-2 text-muted leading-relaxed">{t(lang, 'explProblem')}</p>
-        </section>
-        <section>
-          <h2 class="font-display text-xl font-bold text-ocean">{t(lang, 'explSolutionTitle')}</h2>
-          <ul class="mt-3 list-disc space-y-2 pl-5 text-muted leading-relaxed">
-            <li>{t(lang, 'explSolution1')}</li>
-            <li>{t(lang, 'explSolution2')}</li>
-            <li>{t(lang, 'explSolution3')}</li>
-          </ul>
-        </section>
-        <section>
-          <h2 class="font-display text-xl font-bold text-ocean">{t(lang, 'explHonestTitle')}</h2>
-          <p class="mt-2 text-muted leading-relaxed">{t(lang, 'explHonest')}</p>
-        </section>
-      </div>
-
-      <p class="mt-8">
-        <a
-          href="https://explicasurfstella.com.br"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex rounded-full bg-ocean px-4 py-2 text-sm font-semibold text-foam hover:bg-deep"
-        >
-          {t(lang, 'visitLive')}
-        </a>
-      </p>
-    </div>
-
-    <div class="mx-auto mt-14 grid max-w-5xl gap-4 sm:grid-cols-2">
-      {
-        shots.map((s) => (
-          <figure class="overflow-hidden rounded-xl border border-ocean/10 bg-white">
-            <img src={s.src} alt={s.alt} class="w-full" loading="lazy" width="1200" height="800" />
-          </figure>
-        ))
-      }
-    </div>
-  </article>
-</BaseLayout>
+<CasePage
+  lang={lang}
+  titleKey="explPageTitle"
+  badgeKey="explBadge"
+  leadKey="explPageLead"
+  stackKey="stackExpl"
+  problemTitleKey="explProblemTitle"
+  problemKey="explProblem"
+  solutionTitleKey="explSolutionTitle"
+  solutionKeys={['explSolution1', 'explSolution2', 'explSolution3']}
+  honestTitleKey="explHonestTitle"
+  honestKey="explHonest"
+  ctaHref="https://explicasurfstella.com.br"
+  ctaLabelKey="visitLive"
+  uiShots={uiShots}
+  diagramShots={diagramShots}
+  galleryTitle="Interface"
+  diagramsTitle="Diagrams"
+/>

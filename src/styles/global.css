@@ -33,9 +33,31 @@
     background: color-mix(in oklab, var(--color-tide) 28%, white);
   }
 
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--color-tide);
+    outline-offset: 3px;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
+    }
+
+    .reveal,
+    .reveal-delay-1,
+    .reveal-delay-2,
+    .reveal-delay-3 {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .img-lift,
+    .img-lift:hover {
+      transition: none !important;
+      transform: none !important;
+      box-shadow: none !important;
     }
 
     *,

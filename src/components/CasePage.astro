@@ -1,0 +1,143 @@
+---
+/**
+ * Shared case-study chrome aligned with home visual system.
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import type { Lang } from '../i18n/ui';
+import { t, pathFor } from '../i18n/ui';
+
+interface Shot {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+interface Props {
+  lang: Lang;
+  titleKey: 'bylaPageTitle' | 'explPageTitle';
+  badgeKey: 'bylaBadge' | 'explBadge';
+  leadKey: 'bylaPageLead' | 'explPageLead';
+  stackKey: 'stackByla' | 'stackExpl';
+  problemTitleKey: 'bylaProblemTitle' | 'explProblemTitle';
+  problemKey: 'bylaProblem' | 'explProblem';
+  solutionTitleKey: 'bylaSolutionTitle' | 'explSolutionTitle';
+  solutionKeys: Array<'bylaSolution1' | 'bylaSolution2' | 'bylaSolution3' | 'explSolution1' | 'explSolution2' | 'explSolution3'>;
+  honestTitleKey: 'bylaHonestTitle' | 'explHonestTitle';
+  honestKey: 'bylaHonest' | 'explHonest';
+  ctaHref: string;
+  ctaLabelKey: 'bylaRepo' | 'visitLive';
+  uiShots: Shot[];
+  diagramShots?: Shot[];
+  showDemoNote?: boolean;
+  galleryTitle?: string;
+  diagramsTitle?: string;
+}
+
+const {
+  lang,
+  titleKey,
+  badgeKey,
+  leadKey,
+  stackKey,
+  problemTitleKey,
+  problemKey,
+  solutionTitleKey,
+  solutionKeys,
+  honestTitleKey,
+  honestKey,
+  ctaHref,
+  ctaLabelKey,
+  uiShots,
+  diagramShots = [],
+  showDemoNote = false,
+  galleryTitle,
+  diagramsTitle,
+} = Astro.props;
+
+const pageTitle = `${t(lang, titleKey)} — Levi Tude`;
+---
+
+<BaseLayout lang={lang} title={pageTitle}>
+  <article class="border-b border-line bg-paper">
+    <div class="mx-auto max-w-3xl px-5 py-14 sm:py-16">
+      <a
+        href={pathFor(lang, 'home')}
+        class="inline-flex min-h-11 items-center text-sm font-semibold text-tide transition hover:text-ocean focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide"
+      >
+        {t(lang, 'backHome')}
+      </a>
+
+      <p class="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-tide">{t(lang, badgeKey)}</p>
+      <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-[2.75rem]">
+        {t(lang, titleKey)}
+      </h1>
+      <p class="mt-4 text-lg leading-relaxed text-ink-soft">{t(lang, leadKey)}</p>
+      <p class="mt-2 text-sm text-muted">{t(lang, stackKey)}</p>
+
+      <div class="mt-10 space-y-8">
+        <section>
+          <h2 class="font-display text-xl font-bold text-ink">{t(lang, problemTitleKey)}</h2>
+          <p class="mt-2 leading-relaxed text-ink-soft">{t(lang, problemKey)}</p>
+        </section>
+        <section>
+          <h2 class="font-display text-xl font-bold text-ink">{t(lang, solutionTitleKey)}</h2>
+          <ul class="mt-3 list-disc space-y-2 pl-5 leading-relaxed text-ink-soft">
+            {solutionKeys.map((k) => <li>{t(lang, k)}</li>)}
+          </ul>
+        </section>
+        <section>
+          <h2 class="font-display text-xl font-bold text-ink">{t(lang, honestTitleKey)}</h2>
+          <p class="mt-2 leading-relaxed text-ink-soft">{t(lang, honestKey)}</p>
+        </section>
+      </div>
+
+      <p class="mt-10">
+        <a
+          href={ctaHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex min-h-11 items-center rounded-full bg-ocean px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-tide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide"
+        >
+          {t(lang, ctaLabelKey)}
+        </a>
+      </p>
+    </div>
+
+    <div class="border-t border-line bg-surface px-5 py-14">
+      <div class="mx-auto max-w-6xl">
+        {
+          showDemoNote && (
+            <p class="mb-3 text-xs font-semibold uppercase tracking-wider text-tide">{t(lang, 'demoNote')}</p>
+          )
+        }
+        {galleryTitle && <h2 class="mb-5 font-display text-lg font-bold text-ink">{galleryTitle}</h2>}
+        <div class="grid gap-5 sm:grid-cols-2">
+          {
+            uiShots.map((s) => (
+              <figure class="overflow-hidden rounded-2xl border border-line bg-paper">
+                <img src={s.src} alt={s.alt} class="w-full" loading="lazy" width="1200" height="675" />
+                {s.caption && <figcaption class="px-4 py-3 text-sm text-muted">{s.caption}</figcaption>}
+              </figure>
+            ))
+          }
+        </div>
+
+        {
+          diagramShots.length > 0 && (
+            <div class="mt-10">
+              {diagramsTitle && <h2 class="mb-5 font-display text-lg font-bold text-ink">{diagramsTitle}</h2>}
+              <div class="grid gap-5 sm:grid-cols-2">
+                {diagramShots.map((s) => (
+                  <figure class="overflow-hidden rounded-2xl border border-line bg-paper p-4">
+                    <img src={s.src} alt={s.alt} class="w-full" loading="lazy" />
+                    {s.caption && <figcaption class="mt-3 text-sm text-muted">{s.caption}</figcaption>}
+                  </figure>
+                ))}
+              </div>
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </article>
+</BaseLayout>

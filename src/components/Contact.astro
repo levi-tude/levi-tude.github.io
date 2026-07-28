@@ -19,7 +19,7 @@ const { lang } = Astro.props;
     <div class="mt-8 flex flex-wrap items-center gap-4">
       <a
         href="mailto:levidavitudesilva@gmail.com"
-        class="inline-flex rounded-full bg-tide px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110"
+        class="inline-flex min-h-11 items-center rounded-full bg-tide px-6 py-3 text-sm font-semibold text-white transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foam"
       >
         {t(lang, 'contactCta')}
       </a>
@@ -27,7 +27,7 @@ const { lang } = Astro.props;
         href="https://www.linkedin.com/in/levi-davi-tude-silva/"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-sm font-semibold text-mist transition hover:text-white"
+        class="inline-flex min-h-11 items-center text-sm font-semibold text-mist transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foam"
       >
         {t(lang, 'linkedin')} ↗
       </a>
@@ -35,13 +35,13 @@ const { lang } = Astro.props;
         href="https://github.com/levi-tude"
         target="_blank"
         rel="noopener noreferrer"
-        class="text-sm font-semibold text-mist transition hover:text-white"
+        class="inline-flex min-h-11 items-center text-sm font-semibold text-mist transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foam"
       >
         {t(lang, 'github')} ↗
       </a>
       <a
         href="/cv/Levi-Davi-Tude-Silva.pdf"
-        class="text-sm font-semibold text-mist transition hover:text-white"
+        class="inline-flex min-h-11 items-center text-sm font-semibold text-mist transition hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-foam"
         download
       >
         {t(lang, 'heroCtaCv')} ↓

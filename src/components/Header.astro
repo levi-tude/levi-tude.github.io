@@ -9,28 +9,34 @@ interface Props {
 const { lang } = Astro.props;
 const switchTo = otherLang(lang);
 const home = pathFor(lang, 'home');
+
+const linkClass =
+  'inline-flex min-h-11 items-center rounded-lg px-3 py-2 text-sm text-ink-soft transition hover:bg-tide-soft hover:text-tide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide';
 ---
 
-<header class="sticky top-0 z-50 border-b border-line/80 bg-paper/85 backdrop-blur-md">
-  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3.5">
-    <a href={home} class="font-display text-lg font-bold tracking-tight text-ocean">
+<header class="sticky top-0 z-50 border-b border-line/80 bg-paper/90 backdrop-blur-md">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-2.5">
+    <a
+      href={home}
+      class="inline-flex min-h-11 items-center font-display text-lg font-bold tracking-tight text-ocean focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide"
+    >
       {t(lang, 'brand')}
     </a>
-    <nav class="flex items-center gap-0.5 text-sm text-ink-soft sm:gap-1">
-      <a class="hidden rounded-lg px-2.5 py-1.5 transition hover:bg-tide-soft hover:text-tide sm:inline" href={`${home}#experiencia`}>
+    <nav class="flex items-center gap-0.5" aria-label={lang === 'pt' ? 'Principal' : 'Primary'}>
+      <a class={`hidden sm:inline-flex ${linkClass}`} href={`${home}#experiencia`}>
         {t(lang, 'navExperience')}
       </a>
-      <a class="rounded-lg px-2.5 py-1.5 transition hover:bg-tide-soft hover:text-tide" href={`${home}#projetos`}>
+      <a class={linkClass} href={`${home}#projetos`}>
         {t(lang, 'navProjects')}
       </a>
-      <a class="rounded-lg px-2.5 py-1.5 transition hover:bg-tide-soft hover:text-tide" href={`${home}#sobre`}>
+      <a class={linkClass} href={`${home}#sobre`}>
         {t(lang, 'navAbout')}
       </a>
-      <a class="rounded-lg px-2.5 py-1.5 transition hover:bg-tide-soft hover:text-tide" href={`${home}#contato`}>
+      <a class={linkClass} href={`${home}#contato`}>
         {t(lang, 'navContact')}
       </a>
       <a
-        class="ml-1 rounded-lg border border-line px-2.5 py-1.5 font-medium text-tide transition hover:border-tide hover:bg-tide-soft"
+        class="ml-1 inline-flex min-h-11 items-center rounded-lg border border-line px-3 py-2 text-sm font-semibold text-tide transition hover:border-tide hover:bg-tide-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide"
         href={routes[switchTo].home}
         hreflang={switchTo === 'pt' ? 'pt-BR' : 'en'}
       >
