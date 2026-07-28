@@ -8,19 +8,7 @@ interface Props {
 
 const { lang } = Astro.props;
 
-const projects = [
-  {
-    badge: t(lang, 'bylaBadge'),
-    title: t(lang, 'bylaTitle'),
-    blurb: t(lang, 'bylaBlurb'),
-    stack: t(lang, 'stackByla'),
-    href: pathFor(lang, 'byla'),
-    image: '/images/byla/byla-visao-geral.webp',
-    alt: lang === 'pt'
-      ? 'Painel Visão geral do Byla Financeiro com dados fictícios'
-      : 'Byla Financeiro overview dashboard with fictional data',
-    external: null as string | null,
-  },
+const secondary = [
   {
     badge: t(lang, 'explBadge'),
     title: t(lang, 'explTitle'),
@@ -28,10 +16,8 @@ const projects = [
     stack: t(lang, 'stackExpl'),
     href: pathFor(lang, 'explicasurf'),
     image: '/images/explicasurf/explicasurf-home-stella.png',
-    alt: lang === 'pt'
-      ? 'Home do ExplicaSurf com Stella Maris, Salvador'
-      : 'ExplicaSurf home highlighting Stella Maris, Salvador',
-    external: 'https://explicasurfstella.com.br',
+    alt: lang === 'pt' ? 'Home do ExplicaSurf — Stella Maris' : 'ExplicaSurf home — Stella Maris',
+    external: 'https://explicasurfstella.com.br' as string | null,
   },
   {
     badge: t(lang, 'commercialBadge'),
@@ -40,54 +26,89 @@ const projects = [
     stack: t(lang, 'stackCommercial'),
     href: null as string | null,
     image: '/images/explicasurf/explicasurf-gerar-explicacao-ia.png',
-    alt: lang === 'pt'
-      ? 'Interface para gerar explicação com IA'
-      : 'UI to generate an AI explanation',
+    alt: lang === 'pt' ? 'Gerar explicação com IA' : 'Generate AI explanation',
     external: null,
   },
 ];
 ---
 
-<section id="projetos" class="bg-sand px-5 py-20">
-  <div class="mx-auto max-w-5xl">
-    <div class="mb-12 max-w-2xl">
-      <h2 class="font-display text-3xl font-bold tracking-tight text-ocean sm:text-4xl">
+<section id="projetos" class="border-y border-line bg-paper px-5 py-16 sm:py-20">
+  <div class="mx-auto max-w-6xl">
+    <div class="mb-10 max-w-2xl">
+      <h2 class="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
         {t(lang, 'projectsTitle')}
       </h2>
       <p class="mt-3 text-muted leading-relaxed">{t(lang, 'projectsLead')}</p>
     </div>
 
-    <div class="space-y-14">
+    <!-- Featured: Byla -->
+    <article class="group overflow-hidden rounded-3xl border border-line bg-surface shadow-[0_10px_40px_rgba(10,22,32,0.04)]">
+      <div class="grid lg:grid-cols-[1.25fr_0.75fr]">
+        <a href={pathFor(lang, 'byla')} class="block overflow-hidden bg-foam">
+          <img
+            src="/images/byla/byla-visao-geral.webp"
+            alt={lang === 'pt' ? 'Painel Visão geral do Byla (dados fictícios)' : 'Byla overview dashboard (fictional data)'}
+            class="img-lift h-full min-h-64 w-full object-cover object-top"
+            loading="eager"
+            width="1200"
+            height="675"
+          />
+        </a>
+        <div class="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="rounded-full bg-tide-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-tide">
+              {t(lang, 'featuredLabel')}
+            </span>
+            <span class="rounded-full border border-line px-3 py-1 text-xs font-semibold uppercase tracking-wider text-muted">
+              {t(lang, 'bylaBadge')}
+            </span>
+          </div>
+          <h3 class="mt-4 font-display text-2xl font-bold text-ink sm:text-3xl">{t(lang, 'bylaTitle')}</h3>
+          <p class="mt-3 text-ink-soft leading-relaxed">{t(lang, 'bylaBlurb')}</p>
+          <p class="mt-4 text-sm text-muted">{t(lang, 'stackByla')}</p>
+          <p class="mt-2 text-xs text-muted/80">{t(lang, 'demoNote')}</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a
+              href={pathFor(lang, 'byla')}
+              class="inline-flex rounded-full bg-ocean px-4 py-2 text-sm font-semibold text-white transition hover:bg-tide"
+            >
+              {t(lang, 'readCase')}
+            </a>
+            <a
+              href="https://github.com/levi-tude/Byla-Financeiro"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex rounded-full border border-line px-4 py-2 text-sm font-semibold text-ink-soft transition hover:border-tide hover:text-tide"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Secondary projects -->
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
       {
-        projects.map((p, i) => (
-          <article class={`grid gap-6 lg:grid-cols-2 lg:gap-10 ${i % 2 === 1 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
-            <div class="overflow-hidden rounded-2xl border border-ocean/10 bg-white shadow-sm">
-              <img src={p.image} alt={p.alt} class="h-full w-full object-cover object-top" loading="lazy" width="1200" height="675" />
+        secondary.map((p) => (
+          <article class="overflow-hidden rounded-3xl border border-line bg-surface transition hover:border-tide/40">
+            <div class="overflow-hidden border-b border-line bg-foam">
+              <img src={p.image} alt={p.alt} class="img-lift aspect-[16/10] w-full object-cover object-top" loading="lazy" width="800" height="500" />
             </div>
-            <div class="flex flex-col justify-center">
-              <span class="mb-3 inline-flex w-fit rounded-full bg-ocean/8 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-tide">
-                {p.badge}
-              </span>
-              <h3 class="font-display text-2xl font-bold text-ocean">{p.title}</h3>
-              <p class="mt-3 text-muted leading-relaxed">{p.blurb}</p>
-              <p class="mt-4 text-sm text-ocean/70">{p.stack}</p>
-              <div class="mt-6 flex flex-wrap gap-3">
+            <div class="p-6">
+              <span class="text-xs font-semibold uppercase tracking-wider text-tide">{p.badge}</span>
+              <h3 class="mt-2 font-display text-xl font-bold text-ink">{p.title}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-ink-soft">{p.blurb}</p>
+              <p class="mt-3 text-xs text-muted">{p.stack}</p>
+              <div class="mt-5 flex flex-wrap gap-3">
                 {p.href && (
-                  <a
-                    href={p.href}
-                    class="inline-flex rounded-full bg-ocean px-4 py-2 text-sm font-semibold text-foam transition hover:bg-deep"
-                  >
-                    {t(lang, 'readCase')}
+                  <a href={p.href} class="text-sm font-semibold text-tide hover:text-ocean">
+                    {t(lang, 'readCase')} →
                   </a>
                 )}
                 {p.external && (
-                  <a
-                    href={p.external}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex rounded-full border border-ocean/20 px-4 py-2 text-sm font-semibold text-ocean transition hover:border-tide hover:text-tide"
-                  >
-                    {t(lang, 'visitLive')}
+                  <a href={p.external} target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-muted hover:text-tide">
+                    {t(lang, 'visitLive')} ↗
                   </a>
                 )}
               </div>

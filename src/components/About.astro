@@ -25,22 +25,34 @@ const skills = [
 ];
 ---
 
-<section id="sobre" class="border-y border-ocean/8 bg-foam px-5 py-20">
-  <div class="mx-auto grid max-w-5xl gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-    <div>
-      <h2 class="font-display text-3xl font-bold tracking-tight text-ocean sm:text-4xl">
+<section id="sobre" class="bg-surface px-5 py-16 sm:py-20">
+  <div class="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-14">
+    <figure class="order-2 lg:order-1">
+      <img
+        src="/images/levi-tcc.jpg"
+        alt={t(lang, 'heroPhotoAlt')}
+        class="w-full rounded-3xl object-cover shadow-[0_20px_50px_rgba(10,22,32,0.12)] ring-1 ring-line"
+        loading="lazy"
+        width="863"
+        height="1024"
+      />
+      <figcaption class="mt-3 text-sm text-muted">{t(lang, 'aboutAside')}</figcaption>
+    </figure>
+
+    <div class="order-1 lg:order-2">
+      <h2 class="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
         {t(lang, 'aboutTitle')}
       </h2>
-      <p class="mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+      <p class="mt-4 max-w-xl text-lg leading-relaxed text-ink-soft">
         {t(lang, 'aboutBody')}
       </p>
-    </div>
-    <div>
-      <h3 class="text-sm font-semibold uppercase tracking-[0.16em] text-tide">{t(lang, 'skillsTitle')}</h3>
+      <h3 class="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-tide">
+        {t(lang, 'skillsTitle')}
+      </h3>
       <ul class="mt-4 flex flex-wrap gap-2">
         {
           skills.map((s) => (
-            <li class="rounded-full border border-ocean/10 bg-white px-3 py-1.5 text-sm text-ocean/90">{s}</li>
+            <li class="rounded-full border border-line bg-paper px-3 py-1.5 text-sm text-ink-soft">{s}</li>
           ))
         }
       </ul>
