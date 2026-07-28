@@ -56,7 +56,8 @@ const ui = {
     bylaBadge: 'Produção',
     bylaTitle: 'Byla Financeiro',
     bylaBlurb:
-      'Painel full-stack para gestão financeira e operacional de uma academia cultural. Em uso por admin e secretaria.',
+      'Painel full-stack para gestão financeira e operacional de uma academia cultural.',
+    bylaOutcome: 'Em uso por admin e secretaria no dia a dia da operação.',
     explBadge: 'TCC · Live',
     explTitle: 'ExplicaSurf Stella',
     explBlurb:
@@ -65,13 +66,15 @@ const ui = {
     commercialTitle: 'ExplicaSurf (produto)',
     commercialBlurb:
       'Reescrita multi-praia em Next.js 16 + Supabase. MVP avançado — ainda sem produção plena.',
+    commercialNote: 'Case completo depois — por enquanto só o posicionamento honesto.',
     readCase: 'Ver case',
     visitLive: 'Abrir site',
     aboutTitle: 'Sobre',
     aboutBody:
-      'Graduado em Ciência da Computação (UNIJORGE). No Espaço Byla entrego software com usuários reais; no ExplicaSurf apliquei IA a um domínio que conheço de perto — surf e oceano. Busco vaga full-stack, IA aplicada ou automações.',
+      'Sou de Salvador e gosto de construir software que alguém usa de verdade. Graduado em Ciência da Computação (UNIJORGE). No Espaço Byla entrego o painel financeiro da academia; no ExplicaSurf apliquei IA ao domínio que conheço de perto — o mar e o surf.',
     aboutAside:
-      'A foto é da defesa do TCC ExplicaSurf. Gosto de construir coisas que as pessoas usam de verdade.',
+      'A foto é da defesa do TCC ExplicaSurf. Busco vaga full-stack, IA aplicada ou automações.',
+    aboutLang: 'Inglês avançado (C1).',
     skillsTitle: 'Stack principal',
     contactTitle: 'Vamos conversar',
     contactLead: 'Aberto a vagas e projetos. Respondo por e-mail ou LinkedIn.',
@@ -153,7 +156,8 @@ const ui = {
     bylaBadge: 'Production',
     bylaTitle: 'Byla Financeiro',
     bylaBlurb:
-      'Full-stack dashboard for financial and operational management of a cultural academy. Used by admin and front desk.',
+      'Full-stack dashboard for financial and operational management of a cultural academy.',
+    bylaOutcome: 'Used daily by admin and front-desk staff.',
     explBadge: 'Thesis · Live',
     explTitle: 'ExplicaSurf Stella',
     explBlurb:
@@ -162,13 +166,15 @@ const ui = {
     commercialTitle: 'ExplicaSurf (product)',
     commercialBlurb:
       'Multi-spot rewrite on Next.js 16 + Supabase. Advanced MVP — not full production yet.',
+    commercialNote: 'Full case study later — for now, an honest status only.',
     readCase: 'Read case',
     visitLive: 'Open live site',
     aboutTitle: 'About',
     aboutBody:
-      'B.Sc. in Computer Science (UNIJORGE). At Espaço Byla I ship software for real users; with ExplicaSurf I applied AI to a domain I know firsthand — surf and ocean. Open to full-stack, applied AI, or automation roles.',
+      "I'm from Salvador and I like building software people actually use. B.Sc. in Computer Science (UNIJORGE). At Espaço Byla I ship the academy's finance panel; with ExplicaSurf I applied AI to a domain I know firsthand — the ocean and surfing.",
     aboutAside:
-      'The photo is from my ExplicaSurf thesis defense. I like building things people actually use.',
+      'The photo is from my ExplicaSurf thesis defense. Open to full-stack, applied AI, or automation roles.',
+    aboutLang: 'English: advanced (C1).',
     skillsTitle: 'Core stack',
     contactTitle: "Let's talk",
     contactLead: 'Open to roles and projects. Reach me by email or LinkedIn.',
