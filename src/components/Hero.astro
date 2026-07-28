@@ -10,10 +10,10 @@ const { lang } = Astro.props;
 ---
 
 <section class="mesh-hero relative overflow-hidden border-b border-line">
-  <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-14 sm:py-18 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:py-20">
+  <div class="mx-auto grid max-w-6xl items-center gap-10 px-5 py-[var(--section-y)] lg:grid-cols-[1.05fr_0.95fr] lg:gap-14">
     <div class="reveal">
       <p class="text-sm font-semibold text-tide">{t(lang, 'heroGreeting')}</p>
-      <h1 class="mt-3 font-display text-4xl font-extrabold leading-[1.08] tracking-tight text-ink text-balance sm:text-5xl lg:text-[3.4rem]">
+      <h1 class="type-display mt-3 text-ink text-balance">
         {t(lang, 'heroRole')}
       </h1>
       <p class="mt-5 max-w-xl text-lg leading-relaxed text-ink-soft text-balance">

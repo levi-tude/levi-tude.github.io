@@ -68,7 +68,7 @@ const pageTitle = `${t(lang, titleKey)} — Levi Tude`;
       </a>
 
       <p class="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-tide">{t(lang, badgeKey)}</p>
-      <h1 class="mt-2 font-display text-4xl font-bold tracking-tight text-ink sm:text-[2.75rem]">
+      <h1 class="type-title mt-2 text-ink">
         {t(lang, titleKey)}
       </h1>
       <p class="mt-4 text-lg leading-relaxed text-ink-soft">{t(lang, leadKey)}</p>
@@ -113,10 +113,24 @@ const pageTitle = `${t(lang, titleKey)} — Levi Tude`;
         {galleryTitle && <h2 class="mb-5 font-display text-lg font-bold text-ink">{galleryTitle}</h2>}
         <div class="grid gap-5 sm:grid-cols-2">
           {
-            uiShots.map((s) => (
-              <figure class="overflow-hidden rounded-2xl border border-line bg-paper">
-                <img src={s.src} alt={s.alt} class="w-full" loading="lazy" width="1200" height="675" />
-                {s.caption && <figcaption class="px-4 py-3 text-sm text-muted">{s.caption}</figcaption>}
+            uiShots.map((s, i) => (
+              <figure
+                class:list={[
+                  'overflow-hidden rounded-2xl border border-line bg-paper',
+                  i === 0 && 'sm:col-span-2',
+                ]}
+              >
+                <div class:list={[i === 0 ? 'media-frame rounded-none shadow-none' : '']}>
+                  <img
+                    src={s.src}
+                    alt={s.alt}
+                    class:list={['w-full', i === 0 ? 'img-lift max-h-[28rem] object-cover object-top' : '']}
+                    loading="lazy"
+                    width="1200"
+                    height="675"
+                  />
+                </div>
+                {s.caption && <figcaption class="type-caption px-4 py-3">{s.caption}</figcaption>}
               </figure>
             ))
           }

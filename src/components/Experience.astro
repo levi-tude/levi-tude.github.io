@@ -11,16 +11,16 @@ const { lang } = Astro.props;
 const chips = ['React', 'TypeScript', 'Node/Express', 'Supabase', 'n8n', 'Vercel', 'Render'];
 ---
 
-<section id="experiencia" class="bg-surface px-5 py-16 sm:py-20">
+<section id="experiencia" class="section-y bg-surface px-5">
   <div class="mx-auto max-w-6xl">
-    <div class="mb-10 max-w-2xl">
-      <h2 class="font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
+    <div class="reveal-on-scroll mb-10 max-w-2xl">
+      <h2 class="type-title tracking-tight text-ink">
         {t(lang, 'experienceTitle')}
       </h2>
       <p class="mt-3 text-muted leading-relaxed">{t(lang, 'experienceLead')}</p>
     </div>
 
-    <article class="relative rounded-3xl border border-line bg-paper/60 p-6 sm:p-8">
+    <article class="reveal-on-scroll relative rounded-3xl border border-line bg-paper/60 p-6 sm:p-8">
       <div class="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between">
         <div>
           <h3 class="font-display text-xl font-bold text-ocean">{t(lang, 'expCompany')}</h3>
