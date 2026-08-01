@@ -36,6 +36,8 @@ interface Props {
   showDemoNote?: boolean;
   galleryTitle?: string;
   diagramsTitle?: string;
+  /** Put diagrams before UI screenshots (useful when diagrams are the main proof). */
+  diagramsFirst?: boolean;
 }
 
 const {
@@ -62,6 +64,7 @@ const {
   showDemoNote = false,
   galleryTitle,
   diagramsTitle,
+  diagramsFirst = false,
 } = Astro.props;
 
 const pageTitle = `${t(lang, titleKey)} — Levi Davi Tude Silva`;
@@ -159,6 +162,39 @@ const pageTitle = `${t(lang, titleKey)} — Levi Davi Tude Silva`;
             <p class="mb-3 text-xs font-semibold uppercase tracking-wider text-tide">{t(lang, 'demoNote')}</p>
           )
         }
+
+        {
+          diagramsFirst && diagramShots.length > 0 && (
+            <div class="mb-12">
+              {diagramsTitle && <h2 class="mb-5 font-display text-lg font-bold text-ink">{diagramsTitle}</h2>}
+              <div class="grid gap-5">
+                {diagramShots.map((s, i) => (
+                  <figure
+                    class:list={[
+                      'overflow-hidden rounded-2xl border border-line bg-paper',
+                      i === 0 ? '' : 'sm:max-w-none',
+                    ]}
+                  >
+                    <img
+                      src={s.src}
+                      alt={s.alt}
+                      class="w-full object-contain bg-foam p-3 sm:p-5"
+                      loading={i === 0 ? 'eager' : 'lazy'}
+                      width="840"
+                      height="540"
+                    />
+                    {s.caption && (
+                      <figcaption class="type-caption border-t border-line/70 px-4 py-3.5 text-sm leading-relaxed text-muted">
+                        {s.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+            </div>
+          )
+        }
+
         {galleryTitle && <h2 class="mb-5 font-display text-lg font-bold text-ink">{galleryTitle}</h2>}
         <div class="grid gap-5 sm:grid-cols-2">
           {
@@ -195,7 +231,7 @@ const pageTitle = `${t(lang, titleKey)} — Levi Davi Tude Silva`;
         </div>
 
         {
-          diagramShots.length > 0 && (
+          !diagramsFirst && diagramShots.length > 0 && (
             <div class="mt-10">
               {diagramsTitle && <h2 class="mb-5 font-display text-lg font-bold text-ink">{diagramsTitle}</h2>}
               <div class="grid gap-5 sm:grid-cols-2">

@@ -59,13 +59,19 @@ const diagramShots = [
     src: '/images/byla/byla-arquitetura.svg',
     alt: 'Byla Financeiro architecture diagram',
     caption:
-      'Architecture — React frontend, Node/Express API, and Supabase/PostgreSQL, deployed on Vercel and Render.',
+      'Architecture — React (Vercel) → Node/Express (Render) → Supabase/PostgreSQL, plus legacy Sheets and n8n. No URLs, tokens, or real data.',
+  },
+  {
+    src: '/images/byla/byla-migracao.svg',
+    alt: 'Gradual Google Sheets to Supabase migration diagram',
+    caption:
+      'Gradual migration — backend parsers/rules, spreadsheet + system dual-run, no big-bang cutover.',
   },
   {
     src: '/images/byla/byla-rbac.svg',
     alt: 'RBAC permissions matrix diagram',
     caption:
-      'Permissions matrix — what admin and front desk can see and do in each module.',
+      'RBAC — what admin vs front desk see in menus/routes; official finance limited to admin.',
   },
 ];
 ---
@@ -89,4 +95,5 @@ const diagramShots = [
   showDemoNote={true}
   galleryTitle="Interface"
   diagramsTitle="Diagrams"
+  diagramsFirst={true}
 />
