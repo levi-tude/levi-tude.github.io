@@ -31,16 +31,17 @@ const ui = {
     navAbout: 'Sobre',
     navContact: 'Contato',
     langLabel: 'EN',
-    brand: 'Levi Tude',
-    heroGreeting: 'Olá — eu sou o Levi',
+    brand: 'Levi Davi Tude Silva',
+    heroGreeting: 'Olá — eu sou',
+    heroName: 'Levi Davi Tude Silva',
     heroRole: 'Desenvolvedor full-stack júnior',
     heroLocation: 'Salvador, BA · remoto ou presencial/híbrido',
     heroLead:
-      'Entrego produtos web de ponta a ponta: o Byla Financeiro em produção na academia, e o ExplicaSurf Stella — app live que usa IA para explicar o mar a surfistas. Stack principal React, Node, Python/Flask e Supabase.',
+      'Entrego produtos web de ponta a ponta: o Byla Financeiro em produção na academia, e o ExplicaSurf Stella — app live que usa IA para explicar o mar a surfistas (TCC nota 10). Stack principal React, Node, Python/Flask e Supabase.',
     heroCtaProjects: 'Ver projetos',
     heroCtaContact: 'Falar comigo',
     heroCtaCv: 'Baixar CV',
-    heroPhotoAlt: 'Levi Davi Tude Silva na defesa do TCC ExplicaSurf',
+    heroPhotoAlt: 'Levi Davi Tude Silva — foto de corpo inteiro',
     heroStackHint: 'React · Node · Python/Flask · Supabase · n8n · IA aplicada',
     featuredLabel: 'Destaque',
     experienceTitle: 'Experiência',
@@ -59,10 +60,10 @@ const ui = {
     bylaBlurb:
       'Painel full-stack que organiza finanças e operação de uma academia cultural: alunos, pagamentos, caixa e papéis claros entre gestão e secretaria.',
     bylaOutcome: 'Em uso por admin e secretaria no dia a dia da operação.',
-    explBadge: 'TCC · Live',
+    explBadge: 'TCC · Nota 10 · Live',
     explTitle: 'ExplicaSurf Stella',
     explBlurb:
-      'TCC com app live: interpreta swell, vento e maré com IA generativa e explica condições para surfistas em Stella Maris — fundamentado em ocean literacy.',
+      'TCC nota 10 com app live: interpreta swell, vento e maré com IA generativa e explica condições para surfistas em Stella Maris — fundamentado em ocean literacy.',
     commercialBadge: 'Em desenvolvimento',
     commercialTitle: 'ExplicaSurf (produto multi-praia)',
     commercialBlurb:
@@ -73,9 +74,9 @@ const ui = {
     readArticle: 'Ler artigo (PDF)',
     aboutTitle: 'Sobre',
     aboutBody:
-      'Sou de Salvador e construo software que alguém usa de verdade. Graduado em Ciência da Computação (UNIJORGE). No Espaço Byla mantenho o painel financeiro da academia (React, Node, Supabase). No ExplicaSurf Stella propus e entreguei uma solução com Python/Flask + Gemini que traduz previsões oceânicas para surfistas — com artigo científico e protótipo no ar.',
+      'Sou Levi Davi Tude Silva, de Salvador, e construo software que alguém usa de verdade. Graduado em Ciência da Computação (UNIJORGE). No Espaço Byla mantenho o painel financeiro da academia (React, Node, Supabase). No ExplicaSurf Stella propus e entreguei uma solução com Python/Flask + Gemini que traduz previsões oceânicas para surfistas — TCC nota 10, com artigo científico e protótipo no ar.',
     aboutAside:
-      'A foto é da defesa do TCC ExplicaSurf. Busco vaga full-stack, IA aplicada ou automações.',
+      'Defesa do TCC ExplicaSurf (nota 10). Busco vaga full-stack, IA aplicada ou automações.',
     aboutLang: 'Inglês avançado (C1).',
     skillsTitle: 'Stack principal',
     contactTitle: 'Vamos conversar',
@@ -112,7 +113,7 @@ const ui = {
     bylaRepo: 'Código no GitHub',
     explPageTitle: 'ExplicaSurf Stella',
     explPageLead:
-      'TCC em Ciência da Computação (UNIJORGE): aplicação web live que interpreta previsões oceânicas e climáticas e as explica com IA para surfistas em Stella Maris.',
+      'TCC em Ciência da Computação (UNIJORGE), nota 10: aplicação web live que interpreta previsões oceânicas e climáticas e as explica com IA para surfistas em Stella Maris.',
     explProblemTitle: 'Problema',
     explProblem:
       'Plataformas como Surfline e Surfguru entregam números técnicos (swell, período, vento, maré) que iniciantes — e muitos intermediários — não interpretam bem. Isso afeta desempenho e segurança. O trabalho parte de ocean literacy: compreender e aplicar princípios do oceano no dia a dia.',
@@ -129,7 +130,7 @@ const ui = {
     explBuild2:
       'Desenvolvimento em etapas: APIs e padronização de dados → protótipo de fluxo → integração da IA → ajustes com testes técnicos (maré vs Marinha/Surfguru/WorldTides, energia, vento, rotas e latência).',
     explBuild3:
-      'Protótipo publicado em explicasurfstella.com.br e documentado em artigo científico (formato SBC) e defesa na UNIJORGE.',
+      'Protótipo publicado em explicasurfstella.com.br; documentado em artigo científico (formato SBC) e defesa na UNIJORGE com nota 10.',
     explEvalTitle: 'Avaliação com usuários e testes',
     explEval1:
       'Validação com o público-alvo (surfistas de Stella Maris): formulário enviado a quem se cadastrou na plataforma (out–nov), com escala Likert e perguntas abertas sobre clareza, utilidade e aderência — inclusive das explicações geradas por IA.',
@@ -151,16 +152,17 @@ const ui = {
     navAbout: 'About',
     navContact: 'Contact',
     langLabel: 'PT',
-    brand: 'Levi Tude',
-    heroGreeting: "Hi — I'm Levi",
+    brand: 'Levi Davi Tude Silva',
+    heroGreeting: "Hi — I'm",
+    heroName: 'Levi Davi Tude Silva',
     heroRole: 'Junior full-stack developer',
     heroLocation: 'Salvador, Brazil · remote or on-site/hybrid',
     heroLead:
-      'I ship end-to-end web products: Byla Financeiro in production at an academy, and ExplicaSurf Stella — a live app that uses AI to explain the ocean to surfers. Core stack React, Node, Python/Flask, and Supabase.',
+      'I ship end-to-end web products: Byla Financeiro in production at an academy, and ExplicaSurf Stella — a live app that uses AI to explain the ocean to surfers (thesis graded 10/10). Core stack React, Node, Python/Flask, and Supabase.',
     heroCtaProjects: 'See projects',
     heroCtaContact: 'Get in touch',
     heroCtaCv: 'Download CV',
-    heroPhotoAlt: 'Levi Davi Tude Silva at the ExplicaSurf thesis defense',
+    heroPhotoAlt: 'Levi Davi Tude Silva — full-body photo',
     heroStackHint: 'React · Node · Python/Flask · Supabase · n8n · applied AI',
     featuredLabel: 'Featured',
     experienceTitle: 'Experience',
@@ -179,10 +181,10 @@ const ui = {
     bylaBlurb:
       'Full-stack dashboard for financial and operational management of a cultural academy: students, payments, cash flow, and clear roles for management vs front desk.',
     bylaOutcome: 'Used daily by admin and front-desk staff.',
-    explBadge: 'Thesis · Live',
+    explBadge: 'Thesis · 10/10 · Live',
     explTitle: 'ExplicaSurf Stella',
     explBlurb:
-      'Thesis with a live app: interprets swell, wind, and tide with generative AI and explains conditions for surfers at Stella Maris — grounded in ocean literacy.',
+      'Thesis graded 10/10 with a live app: interprets swell, wind, and tide with generative AI and explains conditions for surfers at Stella Maris — grounded in ocean literacy.',
     commercialBadge: 'In development',
     commercialTitle: 'ExplicaSurf (multi-spot product)',
     commercialBlurb:
@@ -193,9 +195,9 @@ const ui = {
     readArticle: 'Read paper (PDF)',
     aboutTitle: 'About',
     aboutBody:
-      "I'm from Salvador and I build software people actually use. B.Sc. in Computer Science (UNIJORGE). At Espaço Byla I maintain the academy's finance panel (React, Node, Supabase). With ExplicaSurf Stella I proposed and shipped a Python/Flask + Gemini solution that translates ocean forecasts for surfers — with a scientific paper and a live prototype.",
+      "I'm Levi Davi Tude Silva, from Salvador, and I build software people actually use. B.Sc. in Computer Science (UNIJORGE). At Espaço Byla I maintain the academy's finance panel (React, Node, Supabase). With ExplicaSurf Stella I proposed and shipped a Python/Flask + Gemini solution that translates ocean forecasts for surfers — thesis graded 10/10, with a scientific paper and a live prototype.",
     aboutAside:
-      'The photo is from my ExplicaSurf thesis defense. Open to full-stack, applied AI, or automation roles.',
+      'ExplicaSurf thesis defense (graded 10/10). Open to full-stack, applied AI, or automation roles.',
     aboutLang: 'English: advanced (C1).',
     skillsTitle: 'Core stack',
     contactTitle: "Let's talk",
@@ -232,7 +234,7 @@ const ui = {
     bylaRepo: 'Code on GitHub',
     explPageTitle: 'ExplicaSurf Stella',
     explPageLead:
-      'Computer Science thesis (UNIJORGE): a live web app that interprets ocean/weather forecasts and explains them with AI for surfers at Stella Maris.',
+      'Computer Science thesis (UNIJORGE), graded 10/10: a live web app that interprets ocean/weather forecasts and explains them with AI for surfers at Stella Maris.',
     explProblemTitle: 'Problem',
     explProblem:
       'Platforms like Surfline and Surfguru dump technical numbers (swell, period, wind, tide) that beginners — and many intermediates — struggle to read. That affects performance and safety. The work is grounded in ocean literacy: understanding and applying ocean concepts in daily practice.',
@@ -249,7 +251,7 @@ const ui = {
     explBuild2:
       'Built in stages: APIs and data shaping → flow prototype → AI integration → technical tests (tide vs Navy/Surfguru/WorldTides, energy, wind, routes, and latency).',
     explBuild3:
-      'Prototype published at explicasurfstella.com.br and documented in an SBC-format scientific paper and UNIJORGE defense.',
+      'Prototype published at explicasurfstella.com.br; documented in an SBC-format scientific paper and UNIJORGE defense graded 10/10.',
     explEvalTitle: 'User evaluation and tests',
     explEval1:
       'Validation with the target audience (Stella Maris surfers): a form sent to registered users (Oct–Nov) with Likert scales and open questions on clarity, usefulness, and fit — including AI explanations.',
