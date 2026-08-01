@@ -61,27 +61,65 @@ def card(draw, x, y, w, h, fill, outline, title, lines):
 
 
 def make_arquitetura():
-    img = Image.new("RGB", (1600, 1040), "#f7fafb")
+    # Grade 3 colunas alinhadas; altura do card = padding + conteudo
+    col_w = 460
+    gap = 50
+    left = 48
+    cols = [left, left + col_w + gap, left + 2 * (col_w + gap)]
+    pad = 28
+    line_h = 38
+    title_block = 52
+
+    def card_h(n):
+        return pad + title_block + n * line_h + pad
+
+    def draw_card(d, x, y, w, h, fill, outline, title, lines):
+        box(d, (x, y, x + w, y + h), fill, outline)
+        put(d, (x + pad, y + pad), title, font(24, True))
+        yy = y + pad + title_block
+        for line in lines:
+            put(d, (x + pad, yy), line, font(18), "#243642")
+            yy += line_h
+
+    row1_y = 120
+    h1 = card_h(4)
+    auth_band_h = 48
+    row2_y = row1_y + h1 + 28 + auth_band_h + 28
+    h2 = card_h(4)
+    footer_y = row2_y + h2 + 36
+    footer_h = 190
+    W = cols[2] + col_w + 48
+    H = footer_y + footer_h + 40
+
+    img = Image.new("RGB", (W, H), "#f7fafb")
     d = ImageDraw.Draw(img)
 
     put(d, (48, 28), "Arquitetura - Byla Financeiro", font(34, True))
     put(
         d,
         (48, 74),
-        f"Diagrama conceitual de portf{o}lio - sem dados reais, URLs ou tokens",
+        f"Diagrama conceitual de portf{o}lio - sem URLs ou tokens",
         font(20),
         "#5a717c",
     )
 
-    box(d, (980, 34, 1010, 56), "#e6f5f3", "#0f7f7a", 2, 4)
-    put(d, (1020, 36), "Sistema atual", font(16), "#243642")
-    box(d, (1180, 34, 1210, 56), "#fff7ed", "#b45309", 2, 4)
-    put(d, (1220, 36), "Legado", font(16), "#243642")
-    box(d, (1320, 34, 1350, 56), "#f0f7f8", "#0c3b47", 2, 4)
-    put(d, (1360, 36), f"Automa{c}{ot}es", font(16), "#243642")
+    lx = W - 560
+    box(d, (lx, 34, lx + 30, 56), "#e6f5f3", "#0f7f7a", 2, 4)
+    put(d, (lx + 40, 36), "Sistema atual", font(16), "#243642")
+    box(d, (lx + 180, 34, lx + 210, 56), "#fff7ed", "#b45309", 2, 4)
+    put(d, (lx + 220, 36), "Legado", font(16), "#243642")
+    box(d, (lx + 310, 34, lx + 340, 56), "#f0f7f8", "#0c3b47", 2, 4)
+    put(d, (lx + 350, 36), f"Automa{c}{ot}es", font(16), "#243642")
 
-    card(
-        d, 48, 120, 450, 280, "#e6f5f3", "#0f7f7a", "Frontend",
+    draw_card(
+        d,
+        cols[0],
+        row1_y,
+        col_w,
+        h1,
+        "#e6f5f3",
+        "#0f7f7a",
+        "Frontend",
         [
             "React + TypeScript (Vite)",
             "UI operacional e financeira",
@@ -89,8 +127,15 @@ def make_arquitetura():
             f"Pap{e}is: Admin / Secretaria",
         ],
     )
-    card(
-        d, 575, 120, 450, 280, "#e6f5f3", "#0f7f7a", "Backend",
+    draw_card(
+        d,
+        cols[1],
+        row1_y,
+        col_w,
+        h1,
+        "#e6f5f3",
+        "#0f7f7a",
+        "Backend",
         [
             "Node.js + Express",
             f"Regras de neg{o}cio e APIs",
@@ -98,8 +143,15 @@ def make_arquitetura():
             "Hospedagem: Render",
         ],
     )
-    card(
-        d, 1102, 120, 450, 280, "#e6f5f3", "#0f7f7a", "Armazenamento",
+    draw_card(
+        d,
+        cols[2],
+        row1_y,
+        col_w,
+        h1,
+        "#e6f5f3",
+        "#0f7f7a",
+        "Armazenamento",
         [
             "Supabase + PostgreSQL",
             f"Fonte prim{a}ria de dados",
@@ -107,14 +159,39 @@ def make_arquitetura():
             "RLS e views oficiais",
         ],
     )
-    arrow_h(d, 498, 250, 575)
-    put(d, (505, 218), f"API de neg{o}cio", font(14), "#5a717c")
-    arrow_h(d, 1025, 250, 1102)
-    put(d, (1035, 218), f"Persist{e}ncia", font(14), "#5a717c")
-    put(d, (48, 420), "Auth / perfil: frontend -> Supabase (JWT)", font(18), "#0369a1")
 
-    card(
-        d, 48, 460, 450, 280, "#f0f7f8", "#0c3b47", f"Automa{c}{ot}es n8n",
+    mid_y = row1_y + h1 // 2
+    arrow_h(d, cols[0] + col_w + 4, mid_y, cols[1] - 4)
+    put(d, (cols[0] + col_w + 8, mid_y - 26), f"API de neg{o}cio", font(13), "#5a717c")
+    arrow_h(d, cols[1] + col_w + 4, mid_y, cols[2] - 4)
+    put(d, (cols[1] + col_w + 10, mid_y - 26), f"Persist{e}ncia", font(13), "#5a717c")
+
+    auth_y = row1_y + h1 + 28
+    box(
+        d,
+        (cols[0], auth_y, cols[2] + col_w, auth_y + auth_band_h),
+        "#ffffff",
+        "#d7e3e7",
+        2,
+        10,
+    )
+    put(
+        d,
+        (cols[0] + 18, auth_y + 14),
+        f"Auth / perfil: frontend -> Supabase (JWT)   |   Opera{c}{ot}es: frontend -> backend -> banco",
+        font(16),
+        "#0369a1",
+    )
+
+    draw_card(
+        d,
+        cols[0],
+        row2_y,
+        col_w,
+        h2,
+        "#f0f7f8",
+        "#0c3b47",
+        f"Automa{c}{ot}es n8n",
         [
             f"Jobs peri{o}dicos",
             f"Sync e relat{o}rios com IA",
@@ -122,8 +199,15 @@ def make_arquitetura():
             "Fora do app interativo",
         ],
     )
-    card(
-        d, 575, 460, 450, 280, "#fff7ed", "#b45309", "Google Sheets (legado)",
+    draw_card(
+        d,
+        cols[1],
+        row2_y,
+        col_w,
+        h2,
+        "#fff7ed",
+        "#b45309",
+        "Google Sheets (legado)",
         [
             f"Migra{c}{at}o gradual",
             "Leitura/escrita controlada",
@@ -131,8 +215,15 @@ def make_arquitetura():
             "Sem UI direta no painel",
         ],
     )
-    card(
-        d, 1102, 460, 450, 280, "#e6f5f3", "#0f7f7a", f"Dom{i}nio (resumo)",
+    draw_card(
+        d,
+        cols[2],
+        row2_y,
+        col_w,
+        h2,
+        "#e6f5f3",
+        "#0f7f7a",
+        f"Dom{i}nio (resumo)",
         [
             "Alunos / modalidades",
             "Pagamentos / caixa",
@@ -140,41 +231,44 @@ def make_arquitetura():
             "Sem valores ou PII neste desenho",
         ],
     )
-    arrow_h(d, 498, 590, 575)
-    put(d, (515, 558), "Jobs / sync", font(14), "#0c3b47")
-    arrow_up(d, 800, 460, 400)
-    put(d, (812, 415), "Ponte legado", font(14), "#b45309")
-    arrow_h(d, 1025, 590, 1102)
-    put(d, (1050, 558), f"Dom{i}nio", font(14), "#5a717c")
 
-    box(d, (48, 770, 1552, 1000), "#ffffff", "#d7e3e7", 2)
-    put(d, (72, 800), "Acesso por perfil (camada de aplicativo)", font(24, True))
+    mid2 = row2_y + h2 // 2
+    arrow_h(d, cols[0] + col_w + 4, mid2, cols[1] - 4, "#0c3b47")
+    put(d, (cols[0] + col_w + 12, mid2 - 26), "Jobs / sync", font(13), "#0c3b47")
+    bridge_x = cols[1] + col_w // 2
+    arrow_up(d, bridge_x, row2_y, auth_y + auth_band_h)
+    put(d, (bridge_x + 14, row2_y - 22), "Ponte legado", font(13), "#b45309")
+    arrow_h(d, cols[1] + col_w + 4, mid2, cols[2] - 4)
+    put(d, (cols[1] + col_w + 16, mid2 - 26), f"Dom{i}nio", font(13), "#5a717c")
+
+    box(d, (48, footer_y, W - 48, footer_y + footer_h), "#ffffff", "#d7e3e7", 2)
+    put(d, (72, footer_y + 22), "Acesso por perfil (camada de aplicativo)", font(22, True))
     put(
         d,
-        (72, 850),
+        (72, footer_y + 64),
         "Secretaria - fluxo de caixa operacional, aluguel de salas e perfil",
-        font(20),
-        "#243642",
-    )
-    put(
-        d,
-        (72, 890),
-        f"Admin - financeiro oficial, valida{c}{at}o, calend{a}rio, relat{o}rios e vis{at}o geral (+ rotas da secretaria)",
-        font(20),
-        "#243642",
-    )
-    put(
-        d,
-        (72, 935),
-        f"Seguran{c}a: segrega{c}{at}o de acesso na UI/rotas; dados sens{i}veis restritos ao admin",
         font(18),
+        "#243642",
+    )
+    put(
+        d,
+        (72, footer_y + 96),
+        f"Admin - financeiro oficial, valida{c}{at}o, calend{a}rio, relat{o}rios e vis{at}o geral (+ rotas da secretaria)",
+        font(18),
+        "#243642",
+    )
+    put(
+        d,
+        (72, footer_y + 132),
+        f"Seguran{c}a: segrega{c}{at}o na UI/rotas; dados sens{i}veis restritos ao admin",
+        font(16),
         "#5a717c",
     )
     put(
         d,
-        (72, 968),
+        (72, footer_y + 158),
         f"Produ{c}{at}o: Vercel (frontend) + Render (backend) - migra{c}{at}o Sheets ainda progressiva",
-        font(18),
+        font(16),
         "#5a717c",
     )
     save(img, "byla-arquitetura.png")
@@ -209,7 +303,7 @@ def make_migracao():
     bullets = [
         f"Reaproveitamento de parsers e regras j{a} usadas na planilha (alunos, modalidades, pagamentos, caixa).",
         f"Conviv{e}ncia controlada entre planilha e sistema at{e} a equipe consolidar o uso do painel.",
-        f"Migra{c}{at}o progressiva: n{at}o {e} big bang e ainda n{at}o est{a} 100% conclu{i}da.",
+        f"Migra{c}{at}o progressiva: ainda n{at}o est{a} 100% conclu{i}da.",
         f"Seguran{c}a: a secretaria n{at}o v{e} o extrato oficial; o admin acessa o financeiro completo.",
     ]
     yy = 560
@@ -285,7 +379,6 @@ def make_rbac():
         put(d, (x1 + 20, y + 12), lab, font(18))
 
     put(d, (864, 600), "VALIDACAO E RELATORIOS", font(16, True), "#5a717c")
-    # titulo com acentos corretos
     d.rectangle([864, 590, 1528, 630], fill="#ffffff")
     put(d, (864, 600), "VALIDA" + "\u00c7\u00c3O E RELAT\u00d3RIOS", font(16, True), "#5a717c")
 
