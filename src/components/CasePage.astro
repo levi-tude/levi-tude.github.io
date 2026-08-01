@@ -234,7 +234,7 @@ const pageTitle = `${t(lang, titleKey)} — Levi Davi Tude Silva`;
           !diagramsFirst && diagramShots.length > 0 && (
             <div class="mt-10">
               {diagramsTitle && <h2 class="mb-5 font-display text-lg font-bold text-ink">{diagramsTitle}</h2>}
-              <div class="grid gap-5">
+              <div class="grid gap-5 sm:grid-cols-2">
                 {diagramShots.map((s) => (
                   <figure class="overflow-hidden rounded-2xl border border-line bg-paper">
                     <img
@@ -242,8 +242,8 @@ const pageTitle = `${t(lang, titleKey)} — Levi Davi Tude Silva`;
                       alt={s.alt}
                       class="w-full bg-foam object-contain p-3 sm:p-4"
                       loading="lazy"
-                      width="1680"
-                      height="900"
+                      width="1600"
+                      height="980"
                     />
                     {s.caption && (
                       <figcaption class="type-caption border-t border-line/70 px-4 py-3.5 text-sm leading-relaxed text-muted">
