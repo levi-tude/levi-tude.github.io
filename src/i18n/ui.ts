@@ -24,7 +24,7 @@ const ui = {
   pt: {
     metaTitle: 'Levi Davi Tude Silva — Desenvolvedor full-stack',
     metaDescription:
-      'Desenvolvedor full-stack júnior em Salvador. Produto em produção (Byla Financeiro), IA aplicada (ExplicaSurf) e automações.',
+      'Desenvolvedor full-stack júnior em Salvador. Byla Financeiro em produção, ExplicaSurf Stella (IA + previsões oceânicas) e automações.',
     navHome: 'Início',
     navProjects: 'Projetos',
     navExperience: 'Experiência',
@@ -36,12 +36,12 @@ const ui = {
     heroRole: 'Desenvolvedor full-stack júnior',
     heroLocation: 'Salvador, BA · remoto ou presencial/híbrido',
     heroLead:
-      'Construo produtos web de ponta a ponta — do painel usado no dia a dia ao app que explica o mar com IA.',
+      'Entrego produtos web de ponta a ponta: o Byla Financeiro em produção na academia, e o ExplicaSurf Stella — app live que usa IA para explicar o mar a surfistas. Stack principal React, Node, Python/Flask e Supabase.',
     heroCtaProjects: 'Ver projetos',
     heroCtaContact: 'Falar comigo',
     heroCtaCv: 'Baixar CV',
     heroPhotoAlt: 'Levi Davi Tude Silva na defesa do TCC ExplicaSurf',
-    heroStackHint: 'React · Node · Supabase · n8n · IA aplicada',
+    heroStackHint: 'React · Node · Python/Flask · Supabase · n8n · IA aplicada',
     featuredLabel: 'Destaque',
     experienceTitle: 'Experiência',
     experienceLead: 'Trabalho com usuários reais, não só protótipo.',
@@ -52,26 +52,28 @@ const ui = {
     expBullet2: 'Migração gradual Google Sheets → PostgreSQL, com RBAC admin/secretaria.',
     expBullet3: 'Automações n8n (IA, sync, WhatsApp) e módulos operacionais.',
     projectsTitle: 'Projetos',
-    projectsLead: 'Uma experiência em produção, um TCC publicado e um produto em evolução — histórias separadas.',
+    projectsLead:
+      'Dois cases em destaque — produto em produção (Byla) e TCC publicado com app live (ExplicaSurf Stella). A evolução comercial multi-praia fica em segundo plano, ainda em desenvolvimento.',
     bylaBadge: 'Produção',
     bylaTitle: 'Byla Financeiro',
     bylaBlurb:
-      'Painel full-stack para gestão financeira e operacional de uma academia cultural.',
+      'Painel full-stack que organiza finanças e operação de uma academia cultural: alunos, pagamentos, caixa e papéis claros entre gestão e secretaria.',
     bylaOutcome: 'Em uso por admin e secretaria no dia a dia da operação.',
     explBadge: 'TCC · Live',
     explTitle: 'ExplicaSurf Stella',
     explBlurb:
-      'App que traduz swell, vento e maré em explicações acessíveis para surfistas em Stella Maris.',
-    commercialBadge: 'Em evolução',
-    commercialTitle: 'ExplicaSurf (produto)',
+      'TCC com app live: interpreta swell, vento e maré com IA generativa e explica condições para surfistas em Stella Maris — fundamentado em ocean literacy.',
+    commercialBadge: 'Em desenvolvimento',
+    commercialTitle: 'ExplicaSurf (produto multi-praia)',
     commercialBlurb:
-      'Reescrita multi-praia em Next.js 16 + Supabase. MVP avançado — ainda sem produção plena.',
-    commercialNote: 'Case completo depois — por enquanto só o posicionamento honesto.',
+      'Evolução do TCC em Next.js 16 + Supabase para várias praias. MVP avançado — ainda sem produção plena nem calibração total de todos os spots.',
+    commercialNote: 'Projeto separado do Stella live; case completo depois.',
     readCase: 'Ver case',
     visitLive: 'Abrir site',
+    readArticle: 'Ler artigo (PDF)',
     aboutTitle: 'Sobre',
     aboutBody:
-      'Sou de Salvador e gosto de construir software que alguém usa de verdade. Graduado em Ciência da Computação (UNIJORGE). No Espaço Byla entrego o painel financeiro da academia; no ExplicaSurf apliquei IA ao domínio que conheço de perto — o mar e o surf.',
+      'Sou de Salvador e construo software que alguém usa de verdade. Graduado em Ciência da Computação (UNIJORGE). No Espaço Byla mantenho o painel financeiro da academia (React, Node, Supabase). No ExplicaSurf Stella propus e entreguei uma solução com Python/Flask + Gemini que traduz previsões oceânicas para surfistas — com artigo científico e protótipo no ar.',
     aboutAside:
       'A foto é da defesa do TCC ExplicaSurf. Busco vaga full-stack, IA aplicada ou automações.',
     aboutLang: 'Inglês avançado (C1).',
@@ -85,46 +87,64 @@ const ui = {
     footerNote: 'Astro · GitHub Pages · Salvador, BA',
     demoNote: 'Demonstração com dados fictícios',
     stackByla: 'React · TypeScript · Node/Express · Supabase · n8n · Vercel · Render',
-    stackExpl: 'React · Flask · Gemini · Open-Meteo · WorldTides',
+    stackExpl: 'React · Python/Flask · Gemini · Open-Meteo · WorldTides · Redis',
     stackCommercial: 'Next.js 16 · Supabase · Tailwind · OpenRouter/Gemini',
     bylaPageTitle: 'Byla Financeiro',
     bylaPageLead:
-      'Sistema interno de gestão financeira e operacional para o Espaço Byla — da planilha ao painel em produção.',
+      'Sistema interno de gestão financeira e operacional do Espaço Byla — da planilha compartilhada ao painel em produção usado pela equipe.',
     bylaProblemTitle: 'Problema',
     bylaProblem:
-      'A operação rodava em Google Sheets: difícil de auditar, sem papéis claros entre secretaria e gestão, e frágil para crescer.',
-    bylaSolutionTitle: 'O que entreguei',
+      'A academia rodava alunos, modalidades, pagamentos e caixa em Google Sheets. Ficava difícil auditar, separar o que a secretaria podia ver do extrato da gestão, e evoluir regras sem quebrar o dia a dia.',
+    bylaSolutionTitle: 'Como o painel resolve',
     bylaSolution1:
-      'Painel React/TypeScript + API Node/Express + Supabase/PostgreSQL, com autenticação e RBAC (admin vs secretaria).',
+      'Interface React/TypeScript com módulos de visão geral, entradas, despesas, fluxo operacional e aluguel de salas — feitos para quem não é técnico.',
     bylaSolution2:
-      'Migração gradual Sheets → banco, mantendo convivência controlada até a equipe consolidar o uso do sistema.',
+      'API Node/Express + Supabase/PostgreSQL com autenticação e RBAC: secretaria opera alunos/pagamentos; admin acessa o financeiro oficial (extrato, categorias, relatórios).',
     bylaSolution3:
-      'Automações n8n (relatórios com IA, sync, WhatsApp) e módulos operacionais como aluguel de salas.',
-    bylaHonestTitle: 'Limites honestos',
-    bylaHonest:
-      'Não é SaaS multi-tenant vendido. A migração de planilhas é progressiva — não 100% concluída. Prints abaixo usam dados fictícios de demonstração.',
+      'Migração gradual Sheets → banco, com convivência controlada até a equipe consolidar o uso; automações n8n para sync, relatórios assistidos por IA e WhatsApp.',
+    bylaBuildTitle: 'Como construí',
+    bylaBuild1:
+      'Entrega ponta a ponta: modelagem de domínio (alunos, modalidades, pagamentos, caixa), frontend, API REST, deploy em Vercel + Render e iteração com feedback da operação.',
+    bylaBuild2:
+      'Segurança prática: JWT, perfis distintos, RLS e cuidados com dados sensíveis (incluindo minimização de PII em fluxos com IA).',
+    bylaBuild3:
+      'Os prints abaixo usam dados fictícios de demonstração — o sistema real roda com a operação da academia.',
     bylaRepo: 'Código no GitHub',
     explPageTitle: 'ExplicaSurf Stella',
     explPageLead:
-      'TCC em Ciência da Computação (UNIJORGE): app live que explica previsões oceânicas para surfistas.',
+      'TCC em Ciência da Computação (UNIJORGE): aplicação web live que interpreta previsões oceânicas e climáticas e as explica com IA para surfistas em Stella Maris.',
     explProblemTitle: 'Problema',
     explProblem:
-      'Plataformas de forecast entregam números técnicos (swell, período, vento, maré) que iniciantes e muitos intermediários não interpretam bem.',
-    explSolutionTitle: 'O que construí',
+      'Plataformas como Surfline e Surfguru entregam números técnicos (swell, período, vento, maré) que iniciantes — e muitos intermediários — não interpretam bem. Isso afeta desempenho e segurança. O trabalho parte de ocean literacy: compreender e aplicar princípios do oceano no dia a dia.',
+    explSolutionTitle: 'A solução proposta',
     explSolution1:
-      'Frontend React + backend Flask, integrando Open-Meteo e WorldTides com calibração local de Stella Maris.',
+      'O ExplicaSurf não só mostra dados: integra APIs oceânicas/meteorológicas e gera explicações em linguagem acessível, personalizadas por nível, stance (regular/goofy) e experiência.',
     explSolution2:
-      'Explicações geradas com Gemini, personalizadas por nível, stance e experiência — com opção de ouvir (TTS).',
-    explSolution3: 'Artigo em formato SBC e protótipo publicado em explicasurfstella.com.br.',
-    explHonestTitle: 'Separação importante',
-    explHonest:
-      'Este case é o TCC (uma praia, live). O produto comercial multi-praia é outro projeto, ainda em desenvolvimento.',
+      'A IA (Gemini) segue estrutura de domínio — análise geral → impacto por nível → recomendação → segurança — com opção de ouvir a explicação (TTS) e gráficos hora a hora.',
+    explSolution3:
+      'Conhecimento local de Stella Maris (picos, fundos, comportamento de swell e maré) e heurísticas de surf (energia da onda, tendência de vento, calibração de maré) tornam a resposta útil na praia.',
+    explBuildTitle: 'Como construí',
+    explBuild1:
+      'Frontend React (Vite) + backend Python/Flask em arquitetura cliente–servidor: o Flask concentra integração Open-Meteo e WorldTides, calibração local, prompt engineering e cache Redis.',
+    explBuild2:
+      'Desenvolvimento em etapas: APIs e padronização de dados → protótipo de fluxo → integração da IA → ajustes com testes técnicos (maré vs Marinha/Surfguru/WorldTides, energia, vento, rotas e latência).',
+    explBuild3:
+      'Protótipo publicado em explicasurfstella.com.br e documentado em artigo científico (formato SBC) e defesa na UNIJORGE.',
+    explEvalTitle: 'Avaliação com usuários e testes',
+    explEval1:
+      'Validação com o público-alvo (surfistas de Stella Maris): formulário enviado a quem se cadastrou na plataforma (out–nov), com escala Likert e perguntas abertas sobre clareza, utilidade e aderência — inclusive das explicações geradas por IA.',
+    explEval2:
+      '27 respostas autorizaram o uso na análise. O artigo discute a percepção positiva de adoção e o cumprimento dos objetivos específicos do trabalho.',
+    explEval3:
+      'Além dos testes de usuário, houve testes funcionais de API/integração e medição de tempo de resposta com cache (ordem de ~1–2 s nas medições documentadas).',
+    explNextNote:
+      'A evolução comercial multi-praia (Next.js + Supabase) é outro projeto, ainda em desenvolvimento — não confundir com este case Stella, que está live.',
     backHome: '← Voltar ao início',
   },
   en: {
     metaTitle: 'Levi Davi Tude Silva — Full-stack developer',
     metaDescription:
-      'Junior full-stack developer in Salvador, Brazil. Production product (Byla Financeiro), applied AI (ExplicaSurf), and automations.',
+      'Junior full-stack developer in Salvador, Brazil. Byla Financeiro in production, ExplicaSurf Stella (AI + ocean forecasts), and automations.',
     navHome: 'Home',
     navProjects: 'Projects',
     navExperience: 'Experience',
@@ -136,12 +156,12 @@ const ui = {
     heroRole: 'Junior full-stack developer',
     heroLocation: 'Salvador, Brazil · remote or on-site/hybrid',
     heroLead:
-      'I ship end-to-end web products — from dashboards used every day to an app that explains the ocean with AI.',
+      'I ship end-to-end web products: Byla Financeiro in production at an academy, and ExplicaSurf Stella — a live app that uses AI to explain the ocean to surfers. Core stack React, Node, Python/Flask, and Supabase.',
     heroCtaProjects: 'See projects',
     heroCtaContact: 'Get in touch',
     heroCtaCv: 'Download CV',
     heroPhotoAlt: 'Levi Davi Tude Silva at the ExplicaSurf thesis defense',
-    heroStackHint: 'React · Node · Supabase · n8n · applied AI',
+    heroStackHint: 'React · Node · Python/Flask · Supabase · n8n · applied AI',
     featuredLabel: 'Featured',
     experienceTitle: 'Experience',
     experienceLead: 'I ship for real users, not only demos.',
@@ -152,26 +172,28 @@ const ui = {
     expBullet2: 'Gradual Google Sheets → PostgreSQL migration, with admin/front-desk RBAC.',
     expBullet3: 'n8n automations (AI, sync, WhatsApp) and operational modules.',
     projectsTitle: 'Projects',
-    projectsLead: 'One production product, one published thesis app, and a product in progress — kept as separate stories.',
+    projectsLead:
+      'Two featured cases — a production product (Byla) and a published thesis with a live app (ExplicaSurf Stella). The multi-spot commercial evolution stays secondary and is still in development.',
     bylaBadge: 'Production',
     bylaTitle: 'Byla Financeiro',
     bylaBlurb:
-      'Full-stack dashboard for financial and operational management of a cultural academy.',
+      'Full-stack dashboard for financial and operational management of a cultural academy: students, payments, cash flow, and clear roles for management vs front desk.',
     bylaOutcome: 'Used daily by admin and front-desk staff.',
     explBadge: 'Thesis · Live',
     explTitle: 'ExplicaSurf Stella',
     explBlurb:
-      'App that turns swell, wind, and tide into accessible explanations for surfers at Stella Maris.',
-    commercialBadge: 'In progress',
-    commercialTitle: 'ExplicaSurf (product)',
+      'Thesis with a live app: interprets swell, wind, and tide with generative AI and explains conditions for surfers at Stella Maris — grounded in ocean literacy.',
+    commercialBadge: 'In development',
+    commercialTitle: 'ExplicaSurf (multi-spot product)',
     commercialBlurb:
-      'Multi-spot rewrite on Next.js 16 + Supabase. Advanced MVP — not full production yet.',
-    commercialNote: 'Full case study later — for now, an honest status only.',
+      'Thesis evolution on Next.js 16 + Supabase for multiple beaches. Advanced MVP — not full production yet, and not every spot is fully calibrated.',
+    commercialNote: 'Separate from the live Stella thesis app; fuller case later.',
     readCase: 'Read case',
     visitLive: 'Open live site',
+    readArticle: 'Read paper (PDF)',
     aboutTitle: 'About',
     aboutBody:
-      "I'm from Salvador and I like building software people actually use. B.Sc. in Computer Science (UNIJORGE). At Espaço Byla I ship the academy's finance panel; with ExplicaSurf I applied AI to a domain I know firsthand — the ocean and surfing.",
+      "I'm from Salvador and I build software people actually use. B.Sc. in Computer Science (UNIJORGE). At Espaço Byla I maintain the academy's finance panel (React, Node, Supabase). With ExplicaSurf Stella I proposed and shipped a Python/Flask + Gemini solution that translates ocean forecasts for surfers — with a scientific paper and a live prototype.",
     aboutAside:
       'The photo is from my ExplicaSurf thesis defense. Open to full-stack, applied AI, or automation roles.',
     aboutLang: 'English: advanced (C1).',
@@ -185,40 +207,58 @@ const ui = {
     footerNote: 'Astro · GitHub Pages · Salvador, Brazil',
     demoNote: 'Demo with fictional data',
     stackByla: 'React · TypeScript · Node/Express · Supabase · n8n · Vercel · Render',
-    stackExpl: 'React · Flask · Gemini · Open-Meteo · WorldTides',
+    stackExpl: 'React · Python/Flask · Gemini · Open-Meteo · WorldTides · Redis',
     stackCommercial: 'Next.js 16 · Supabase · Tailwind · OpenRouter/Gemini',
     bylaPageTitle: 'Byla Financeiro',
     bylaPageLead:
-      'Internal financial and operations system for Espaço Byla — from spreadsheets to a production dashboard.',
+      'Internal financial and operations system for Espaço Byla — from shared spreadsheets to a production dashboard used by the team.',
     bylaProblemTitle: 'Problem',
     bylaProblem:
-      'Operations ran on Google Sheets: hard to audit, unclear roles between front desk and management, fragile to grow.',
-    bylaSolutionTitle: 'What I shipped',
+      'The academy ran students, modalities, payments, and cash flow on Google Sheets. Hard to audit, hard to separate front-desk work from management bank data, and fragile when rules changed.',
+    bylaSolutionTitle: 'How the panel helps',
     bylaSolution1:
-      'React/TypeScript UI + Node/Express API + Supabase/PostgreSQL with auth and RBAC (admin vs front desk).',
+      'React/TypeScript UI with overview, income, expenses, operational flow, and room booking — designed for non-technical staff.',
     bylaSolution2:
-      'Gradual Sheets → database migration with controlled dual-run until the team adopted the panel.',
+      'Node/Express API + Supabase/PostgreSQL with auth and RBAC: front desk handles students/payments; admin sees official finance (ledger, categories, reports).',
     bylaSolution3:
-      'n8n automations (AI-assisted reports, sync, WhatsApp) and operational modules like room booking.',
-    bylaHonestTitle: 'Honest limits',
-    bylaHonest:
-      'Not a sold multi-tenant SaaS. Spreadsheet migration is progressive — not 100% done. Screenshots below use fictional demo data.',
+      'Gradual Sheets → database migration with controlled dual-run; n8n automations for sync, AI-assisted reports, and WhatsApp.',
+    bylaBuildTitle: 'How I built it',
+    bylaBuild1:
+      'End-to-end delivery: domain modeling, frontend, REST API, Vercel + Render deploy, and iteration with ops feedback.',
+    bylaBuild2:
+      'Practical security: JWT, distinct roles, RLS, and care with sensitive data (including PII minimization in AI flows).',
+    bylaBuild3:
+      'Screenshots below use fictional demo data — the real system runs with the academy’s operations.',
     bylaRepo: 'Code on GitHub',
     explPageTitle: 'ExplicaSurf Stella',
     explPageLead:
-      'Computer Science thesis (UNIJORGE): a live app that explains ocean forecasts for surfers.',
+      'Computer Science thesis (UNIJORGE): a live web app that interprets ocean/weather forecasts and explains them with AI for surfers at Stella Maris.',
     explProblemTitle: 'Problem',
     explProblem:
-      'Forecast platforms dump technical numbers (swell, period, wind, tide) that beginners and many intermediates struggle to interpret.',
-    explSolutionTitle: 'What I built',
+      'Platforms like Surfline and Surfguru dump technical numbers (swell, period, wind, tide) that beginners — and many intermediates — struggle to read. That affects performance and safety. The work is grounded in ocean literacy: understanding and applying ocean concepts in daily practice.',
+    explSolutionTitle: 'The proposed solution',
     explSolution1:
-      'React frontend + Flask backend, integrating Open-Meteo and WorldTides with local Stella Maris calibration.',
+      'ExplicaSurf does more than display data: it integrates ocean/weather APIs and generates accessible explanations personalized by skill level, stance (regular/goofy), and experience.',
     explSolution2:
-      'Gemini-generated explanations personalized by level, stance, and experience — with optional TTS.',
-    explSolution3: 'SBC-format paper and a published prototype at explicasurfstella.com.br.',
-    explHonestTitle: 'Important separation',
-    explHonest:
-      'This case is the thesis app (one beach, live). The commercial multi-spot product is a separate project still in development.',
+      'Gemini follows a domain structure — overview → impact by level → recommendation → safety — with optional TTS and hour-by-hour charts.',
+    explSolution3:
+      'Local Stella Maris knowledge (peaks, bottoms, swell/tide behavior) and surf heuristics (wave energy, wind trend, tide calibration) make the output useful on the beach.',
+    explBuildTitle: 'How I built it',
+    explBuild1:
+      'React (Vite) frontend + Python/Flask backend in a client–server layout: Flask owns Open-Meteo and WorldTides integration, local calibration, prompt engineering, and Redis caching.',
+    explBuild2:
+      'Built in stages: APIs and data shaping → flow prototype → AI integration → technical tests (tide vs Navy/Surfguru/WorldTides, energy, wind, routes, and latency).',
+    explBuild3:
+      'Prototype published at explicasurfstella.com.br and documented in an SBC-format scientific paper and UNIJORGE defense.',
+    explEvalTitle: 'User evaluation and tests',
+    explEval1:
+      'Validation with the target audience (Stella Maris surfers): a form sent to registered users (Oct–Nov) with Likert scales and open questions on clarity, usefulness, and fit — including AI explanations.',
+    explEval2:
+      '27 responses authorized use in the analysis. The paper discusses positive adoption perception and that the specific research objectives were met.',
+    explEval3:
+      'Besides user evaluation, there were functional API/integration tests and documented response times with caching (around ~1–2 s in the recorded measurements).',
+    explNextNote:
+      'The multi-spot commercial evolution (Next.js + Supabase) is a separate project still in development — not to be confused with this live Stella case.',
     backHome: '← Back home',
   },
 } as const;

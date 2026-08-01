@@ -4,19 +4,69 @@ import CasePage from '../../components/CasePage.astro';
 const lang = 'pt' as const;
 
 const uiShots = [
-  { src: '/images/byla/byla-visao-geral.webp', alt: 'Visão geral com KPIs fictícios', caption: 'Visão geral — painel executivo (demo)' },
-  { src: '/images/byla/byla-fluxo-operacional.webp', alt: 'Fluxo operacional de alunos e pagamentos', caption: 'Fluxo operacional' },
-  { src: '/images/byla/byla-entradas.webp', alt: 'Tela de entradas', caption: 'Entradas' },
-  { src: '/images/byla/byla-despesas.webp', alt: 'Tela de despesas', caption: 'Despesas' },
-  { src: '/images/byla/byla-rbac-admin-ui.webp', alt: 'Menu do perfil admin', caption: 'RBAC — menu admin' },
-  { src: '/images/byla/byla-rbac-secretaria-ui.webp', alt: 'Menu restrito da secretaria', caption: 'RBAC — menu secretaria' },
-  { src: '/images/byla/byla-relatorio-ia.webp', alt: 'Relatório assistido por IA (demo)', caption: 'Relatório assistido por IA' },
-  { src: '/images/byla/byla-mobile.webp', alt: 'Layout mobile do fluxo', caption: 'Layout mobile' },
+  {
+    src: '/images/byla/byla-visao-geral.webp',
+    alt: 'Painel de visão geral com KPIs fictícios',
+    caption:
+      'Visão geral — KPIs e leitura executiva do mês para a gestão acompanhar a operação sem abrir várias planilhas (demo com dados fictícios).',
+  },
+  {
+    src: '/images/byla/byla-fluxo-operacional.webp',
+    alt: 'Fluxo operacional de alunos e pagamentos',
+    caption:
+      'Fluxo operacional — secretaria acompanha alunos e pagamentos no caminho do dia a dia da academia.',
+  },
+  {
+    src: '/images/byla/byla-entradas.webp',
+    alt: 'Tela de lançamento e listagem de entradas',
+    caption:
+      'Entradas — registro e consulta de receitas com categorias e competência, no lugar de células soltas na planilha.',
+  },
+  {
+    src: '/images/byla/byla-despesas.webp',
+    alt: 'Tela de lançamento e listagem de despesas',
+    caption:
+      'Despesas — controle de saídas alinhado ao financeiro oficial visto pelo perfil admin.',
+  },
+  {
+    src: '/images/byla/byla-rbac-admin-ui.webp',
+    alt: 'Menu do perfil administrador com acesso financeiro completo',
+    caption:
+      'RBAC admin — menu com acesso ao extrato e módulos financeiros sensíveis.',
+  },
+  {
+    src: '/images/byla/byla-rbac-secretaria-ui.webp',
+    alt: 'Menu restrito do perfil secretaria',
+    caption:
+      'RBAC secretaria — menu enxuto: opera o fluxo sem expor o financeiro completo da gestão.',
+  },
+  {
+    src: '/images/byla/byla-relatorio-ia.webp',
+    alt: 'Relatório assistido por IA com dados de demonstração',
+    caption:
+      'Relatório assistido por IA — apoio à análise operacional/financeira (demo); prompts com cuidado para não vazar PII.',
+  },
+  {
+    src: '/images/byla/byla-mobile.webp',
+    alt: 'Layout mobile do fluxo operacional',
+    caption:
+      'Mobile — o mesmo fluxo operacional cabe no celular da equipe na academia.',
+  },
 ];
 
 const diagramShots = [
-  { src: '/images/byla/byla-arquitetura.svg', alt: 'Diagrama de arquitetura do Byla', caption: 'Arquitetura' },
-  { src: '/images/byla/byla-rbac.svg', alt: 'Diagrama de permissões RBAC', caption: 'Matriz de permissões' },
+  {
+    src: '/images/byla/byla-arquitetura.svg',
+    alt: 'Diagrama de arquitetura do Byla Financeiro',
+    caption:
+      'Arquitetura — React no frontend, API Node/Express e Supabase/PostgreSQL, com deploy em Vercel e Render.',
+  },
+  {
+    src: '/images/byla/byla-rbac.svg',
+    alt: 'Diagrama da matriz de permissões RBAC',
+    caption:
+      'Matriz de permissões — o que admin e secretaria podem ver e fazer em cada módulo.',
+  },
 ];
 ---
 
@@ -30,8 +80,8 @@ const diagramShots = [
   problemKey="bylaProblem"
   solutionTitleKey="bylaSolutionTitle"
   solutionKeys={['bylaSolution1', 'bylaSolution2', 'bylaSolution3']}
-  honestTitleKey="bylaHonestTitle"
-  honestKey="bylaHonest"
+  buildTitleKey="bylaBuildTitle"
+  buildKeys={['bylaBuild1', 'bylaBuild2', 'bylaBuild3']}
   ctaHref="https://github.com/levi-tude/Byla-Financeiro"
   ctaLabelKey="bylaRepo"
   uiShots={uiShots}

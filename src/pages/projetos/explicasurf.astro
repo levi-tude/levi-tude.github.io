@@ -4,17 +4,56 @@ import CasePage from '../../components/CasePage.astro';
 const lang = 'pt' as const;
 
 const uiShots = [
-  { src: '/images/explicasurf/explicasurf-home-stella.png', alt: 'Home ExplicaSurf — Stella Maris', caption: 'Home — Stella Maris' },
-  { src: '/images/explicasurf/explicasurf-condicoes-mar.png', alt: 'Card de condições do mar e tempo', caption: 'Condições do mar e tempo' },
-  { src: '/images/explicasurf/explicasurf-gerar-explicacao-ia.png', alt: 'Personalizar e gerar explicação com IA', caption: 'Gerar explicação com IA' },
-  { src: '/images/explicasurf/explicasurf-card-explicacao-ui.png', alt: 'Card de explicação personalizada com TTS', caption: 'Explicação personalizada + TTS' },
-  { src: '/images/explicasurf/explicasurf-grafico-ondas.png', alt: 'Gráfico de altura e período das ondas', caption: 'Gráfico de ondas' },
-  { src: '/images/explicasurf/explicasurf-grafico-mare.png', alt: 'Gráfico de maré', caption: 'Gráfico de maré' },
-  { src: '/images/explicasurf/explicasurf-login.png', alt: 'Tela de login do ExplicaSurf', caption: 'Login' },
+  {
+    src: '/images/explicasurf/explicasurf-home-stella.png',
+    alt: 'Tela inicial do ExplicaSurf com Stella Maris selecionada',
+    caption:
+      'Home — Stella Maris como spot de referência. O surfista entra direto na previsão do dia, sem precisar decifrar só números crus.',
+  },
+  {
+    src: '/images/explicasurf/explicasurf-condicoes-mar.png',
+    alt: 'Cards de condições do mar e tempo',
+    caption:
+      'Condições do mar e tempo — swell, vento e contexto climático em cards legíveis, baseados nas APIs integradas.',
+  },
+  {
+    src: '/images/explicasurf/explicasurf-gerar-explicacao-ia.png',
+    alt: 'Formulário para personalizar e gerar explicação com IA',
+    caption:
+      'Antes de gerar a IA: o usuário informa nível, stance e experiência — a explicação se adapta a esse perfil.',
+  },
+  {
+    src: '/images/explicasurf/explicasurf-card-explicacao-ui.png',
+    alt: 'Card de explicação personalizada com opção de áudio TTS',
+    caption:
+      'Explicação personalizada com estrutura de domínio (análise, impacto, recomendação, segurança) e opção de ouvir (TTS).',
+  },
+  {
+    src: '/images/explicasurf/explicasurf-grafico-ondas.png',
+    alt: 'Gráfico de altura e período das ondas ao longo do dia',
+    caption:
+      'Gráfico de ondas — altura e período hora a hora para planejar a janela de surf com apoio visual.',
+  },
+  {
+    src: '/images/explicasurf/explicasurf-grafico-mare.png',
+    alt: 'Gráfico de maré ao longo do dia',
+    caption:
+      'Gráfico de maré — leitura da variação diária, alinhada à calibração local usada no backend.',
+  },
+  {
+    src: '/images/explicasurf/explicasurf-login.png',
+    alt: 'Tela de login do ExplicaSurf',
+    caption: 'Login — acesso à conta para personalização e cadastro usados na avaliação com usuários.',
+  },
 ];
 
 const diagramShots = [
-  { src: '/images/explicasurf/explicasurf-arquitetura.png', alt: 'Diagrama de arquitetura ExplicaSurf', caption: 'Arquitetura' },
+  {
+    src: '/images/explicasurf/explicasurf-arquitetura.png',
+    alt: 'Diagrama de arquitetura do ExplicaSurf',
+    caption:
+      'Arquitetura cliente–servidor: React no frontend e Python/Flask no backend integrando APIs oceânicas, maré e Gemini.',
+  },
 ];
 ---
 
@@ -28,10 +67,15 @@ const diagramShots = [
   problemKey="explProblem"
   solutionTitleKey="explSolutionTitle"
   solutionKeys={['explSolution1', 'explSolution2', 'explSolution3']}
-  honestTitleKey="explHonestTitle"
-  honestKey="explHonest"
+  buildTitleKey="explBuildTitle"
+  buildKeys={['explBuild1', 'explBuild2', 'explBuild3']}
+  evalTitleKey="explEvalTitle"
+  evalKeys={['explEval1', 'explEval2', 'explEval3']}
+  nextNoteKey="explNextNote"
   ctaHref="https://explicasurfstella.com.br"
   ctaLabelKey="visitLive"
+  articleHref="/docs/ExplicaSurf-Artigo.pdf"
+  articleLabelKey="readArticle"
   uiShots={uiShots}
   diagramShots={diagramShots}
   galleryTitle="Interface"

@@ -4,19 +4,69 @@ import CasePage from '../../../components/CasePage.astro';
 const lang = 'en' as const;
 
 const uiShots = [
-  { src: '/images/byla/byla-visao-geral.webp', alt: 'Overview dashboard with fictional KPIs', caption: 'Overview — executive panel (demo)' },
-  { src: '/images/byla/byla-fluxo-operacional.webp', alt: 'Operational flow for students and payments', caption: 'Operational flow' },
-  { src: '/images/byla/byla-entradas.webp', alt: 'Income screen', caption: 'Income' },
-  { src: '/images/byla/byla-despesas.webp', alt: 'Expenses screen', caption: 'Expenses' },
-  { src: '/images/byla/byla-rbac-admin-ui.webp', alt: 'Admin menu', caption: 'RBAC — admin menu' },
-  { src: '/images/byla/byla-rbac-secretaria-ui.webp', alt: 'Front-desk restricted menu', caption: 'RBAC — front desk' },
-  { src: '/images/byla/byla-relatorio-ia.webp', alt: 'AI-assisted report (demo)', caption: 'AI-assisted report' },
-  { src: '/images/byla/byla-mobile.webp', alt: 'Mobile layout of the flow', caption: 'Mobile layout' },
+  {
+    src: '/images/byla/byla-visao-geral.webp',
+    alt: 'Overview dashboard with fictional KPIs',
+    caption:
+      'Overview — monthly executive KPIs so management can follow operations without juggling spreadsheets (fictional demo data).',
+  },
+  {
+    src: '/images/byla/byla-fluxo-operacional.webp',
+    alt: 'Operational flow for students and payments',
+    caption:
+      'Operational flow — front desk tracks students and payments in the academy’s daily path.',
+  },
+  {
+    src: '/images/byla/byla-entradas.webp',
+    alt: 'Income entry and listing screen',
+    caption:
+      'Income — record and review revenue with categories and competence periods instead of loose spreadsheet cells.',
+  },
+  {
+    src: '/images/byla/byla-despesas.webp',
+    alt: 'Expenses entry and listing screen',
+    caption:
+      'Expenses — outflow control aligned with the official finance view for the admin role.',
+  },
+  {
+    src: '/images/byla/byla-rbac-admin-ui.webp',
+    alt: 'Administrator menu with full finance access',
+    caption:
+      'RBAC admin — menu with ledger access and sensitive finance modules.',
+  },
+  {
+    src: '/images/byla/byla-rbac-secretaria-ui.webp',
+    alt: 'Restricted front-desk menu',
+    caption:
+      'RBAC front desk — slim menu: runs the operational flow without exposing full management finance.',
+  },
+  {
+    src: '/images/byla/byla-relatorio-ia.webp',
+    alt: 'AI-assisted report with demo data',
+    caption:
+      'AI-assisted report — support for ops/finance analysis (demo); prompts designed to minimize PII leakage.',
+  },
+  {
+    src: '/images/byla/byla-mobile.webp',
+    alt: 'Mobile layout of the operational flow',
+    caption:
+      'Mobile — the same operational flow fits the staff phone on site.',
+  },
 ];
 
 const diagramShots = [
-  { src: '/images/byla/byla-arquitetura.svg', alt: 'Byla architecture diagram', caption: 'Architecture' },
-  { src: '/images/byla/byla-rbac.svg', alt: 'RBAC permissions diagram', caption: 'Permissions matrix' },
+  {
+    src: '/images/byla/byla-arquitetura.svg',
+    alt: 'Byla Financeiro architecture diagram',
+    caption:
+      'Architecture — React frontend, Node/Express API, and Supabase/PostgreSQL, deployed on Vercel and Render.',
+  },
+  {
+    src: '/images/byla/byla-rbac.svg',
+    alt: 'RBAC permissions matrix diagram',
+    caption:
+      'Permissions matrix — what admin and front desk can see and do in each module.',
+  },
 ];
 ---
 
@@ -30,8 +80,8 @@ const diagramShots = [
   problemKey="bylaProblem"
   solutionTitleKey="bylaSolutionTitle"
   solutionKeys={['bylaSolution1', 'bylaSolution2', 'bylaSolution3']}
-  honestTitleKey="bylaHonestTitle"
-  honestKey="bylaHonest"
+  buildTitleKey="bylaBuildTitle"
+  buildKeys={['bylaBuild1', 'bylaBuild2', 'bylaBuild3']}
   ctaHref="https://github.com/levi-tude/Byla-Financeiro"
   ctaLabelKey="bylaRepo"
   uiShots={uiShots}

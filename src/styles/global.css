@@ -110,8 +110,8 @@
   }
 
   .type-caption {
-    font-size: 0.8125rem;
-    line-height: 1.45;
+    font-size: 0.875rem;
+    line-height: 1.5;
     color: var(--color-muted);
   }
 
@@ -122,6 +122,22 @@
     box-shadow:
       0 1px 0 rgba(255, 255, 255, 0.6) inset,
       0 18px 50px rgba(10, 22, 32, 0.1);
+  }
+}
+
+@media (max-width: 640px) {
+  .type-display {
+    font-size: clamp(1.85rem, 8vw, 2.35rem);
+  }
+
+  .type-title {
+    font-size: clamp(1.45rem, 6vw, 1.85rem);
+  }
+
+  .mesh-hero {
+    background:
+      radial-gradient(ellipse 80% 45% at 50% 0%, rgba(15, 127, 122, 0.14), transparent 55%),
+      linear-gradient(180deg, #f7fafb 0%, #eef5f6 100%);
   }
 }
 

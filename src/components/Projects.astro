@@ -7,33 +7,6 @@ interface Props {
 }
 
 const { lang } = Astro.props;
-
-const secondary = [
-  {
-    kind: 'stella' as const,
-    badge: t(lang, 'explBadge'),
-    title: t(lang, 'explTitle'),
-    blurb: t(lang, 'explBlurb'),
-    stack: t(lang, 'stackExpl'),
-    href: pathFor(lang, 'explicasurf'),
-    image: '/images/explicasurf/explicasurf-home-stella.png',
-    alt: lang === 'pt' ? 'Home do ExplicaSurf — Stella Maris' : 'ExplicaSurf home — Stella Maris',
-    external: 'https://explicasurfstella.com.br' as string | null,
-    note: null as string | null,
-  },
-  {
-    kind: 'commercial' as const,
-    badge: t(lang, 'commercialBadge'),
-    title: t(lang, 'commercialTitle'),
-    blurb: t(lang, 'commercialBlurb'),
-    stack: t(lang, 'stackCommercial'),
-    href: null as string | null,
-    image: '/images/explicasurf/explicasurf-gerar-explicacao-ia.png',
-    alt: lang === 'pt' ? 'Gerar explicação com IA' : 'Generate AI explanation',
-    external: null,
-    note: t(lang, 'commercialNote'),
-  },
-];
 ---
 
 <section id="projetos" class="section-y border-y border-line bg-paper px-5">
@@ -53,14 +26,14 @@ const secondary = [
             <img
               src="/images/byla/byla-visao-geral.webp"
               alt={lang === 'pt' ? 'Painel Visão geral do Byla (dados fictícios)' : 'Byla overview dashboard (fictional data)'}
-              class="img-lift min-h-64 w-full object-cover object-top"
+              class="img-lift min-h-48 w-full object-cover object-top sm:min-h-64"
               loading="eager"
               width="1200"
               height="675"
             />
           </div>
         </a>
-        <div class="flex flex-col justify-center p-6 sm:p-8 lg:p-10">
+        <div class="flex flex-col justify-center p-5 sm:p-8 lg:p-10">
           <div class="flex flex-wrap items-center gap-2">
             <span class="rounded-full bg-tide-soft px-3 py-1 text-xs font-semibold uppercase tracking-wider text-tide">
               {t(lang, 'featuredLabel')}
@@ -72,12 +45,12 @@ const secondary = [
           <h3 class="type-subtitle mt-4 text-ink">{t(lang, 'bylaTitle')}</h3>
           <p class="mt-3 text-ink-soft leading-relaxed">{t(lang, 'bylaBlurb')}</p>
           <p class="mt-2 text-sm font-semibold text-ocean">{t(lang, 'bylaOutcome')}</p>
-          <p class="mt-4 text-sm text-muted">{t(lang, 'stackByla')}</p>
+          <p class="mt-4 text-sm text-muted leading-relaxed">{t(lang, 'stackByla')}</p>
           <p class="type-caption mt-2">{t(lang, 'demoNote')}</p>
-          <div class="mt-6 flex flex-wrap gap-3">
+          <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <a
               href={pathFor(lang, 'byla')}
-              class="inline-flex min-h-11 items-center rounded-full bg-ocean px-4 py-2 text-sm font-semibold text-white transition hover:bg-tide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide"
+              class="inline-flex min-h-11 w-full items-center justify-center rounded-full bg-ocean px-4 py-2 text-sm font-semibold text-white transition hover:bg-tide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide sm:w-auto"
             >
               {t(lang, 'readCase')}
             </a>
@@ -85,7 +58,7 @@ const secondary = [
               href="https://github.com/levi-tude/Byla-Financeiro"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex min-h-11 items-center rounded-full border border-line px-4 py-2 text-sm font-semibold text-ink-soft transition hover:border-tide hover:text-tide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide"
+              class="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-line px-4 py-2 text-sm font-semibold text-ink-soft transition hover:border-tide hover:text-tide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide sm:w-auto"
             >
               GitHub
             </a>
@@ -94,57 +67,55 @@ const secondary = [
       </div>
     </article>
 
-    <div class="mt-8 grid gap-6 md:grid-cols-2">
-      {
-        secondary.map((p) => (
-          <article
-            class:list={[
-              'reveal-on-scroll overflow-hidden rounded-3xl border transition',
-              p.kind === 'stella' ? 'border-line bg-surface hover:border-tide/50' : 'border-dashed border-line/80 bg-paper/40',
-            ]}
-          >
-            <div class="border-b border-line bg-foam p-3">
-              <div class:list={[p.kind === 'stella' ? 'media-frame' : 'overflow-hidden rounded-xl']}>
-                <img
-                  src={p.image}
-                  alt={p.alt}
-                  class:list={['aspect-[16/10] w-full object-cover object-top', p.kind === 'stella' ? 'img-lift' : 'opacity-90']}
-                  loading="lazy"
-                  width="800"
-                  height="500"
-                />
-              </div>
-            </div>
-            <div class="p-6">
-              <span class="text-xs font-semibold uppercase tracking-wider text-tide">{p.badge}</span>
-              <h3 class="mt-2 font-display text-xl font-bold text-ink">{p.title}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-ink-soft">{p.blurb}</p>
-              {p.note && <p class="type-caption mt-2 italic">{p.note}</p>}
-              <p class="type-caption mt-3">{p.stack}</p>
-              <div class="mt-5 flex flex-wrap gap-4">
-                {p.external && (
-                  <a
-                    href={p.external}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="text-sm font-semibold text-tide hover:text-ocean focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide"
-                  >
-                    {t(lang, 'visitLive')} ↗
-                  </a>
-                )}
-                {p.href && (
-                  <a
-                    href={p.href}
-                    class="text-sm font-semibold text-ink-soft hover:text-tide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide"
-                  >
-                    {t(lang, 'readCase')} →
-                  </a>
-                )}
-              </div>
-            </div>
-          </article>
-        ))
-      }
-    </div>
+    <article class="reveal-on-scroll mt-8 overflow-hidden rounded-3xl border border-line bg-surface transition hover:border-tide/50">
+      <div class="grid md:grid-cols-[1.1fr_0.9fr]">
+        <div class="border-b border-line bg-foam p-3 md:border-b-0 md:border-r">
+          <div class="media-frame">
+            <img
+              src="/images/explicasurf/explicasurf-home-stella.png"
+              alt={lang === 'pt' ? 'Home do ExplicaSurf — Stella Maris' : 'ExplicaSurf home — Stella Maris'}
+              class="img-lift aspect-[16/10] w-full object-cover object-top"
+              loading="lazy"
+              width="800"
+              height="500"
+            />
+          </div>
+        </div>
+        <div class="flex flex-col justify-center p-5 sm:p-6 md:p-8">
+          <span class="text-xs font-semibold uppercase tracking-wider text-tide">{t(lang, 'explBadge')}</span>
+          <h3 class="mt-2 font-display text-xl font-bold text-ink sm:text-2xl">{t(lang, 'explTitle')}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-ink-soft sm:text-base">{t(lang, 'explBlurb')}</p>
+          <p class="type-caption mt-3 leading-relaxed">{t(lang, 'stackExpl')}</p>
+          <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+            <a
+              href="https://explicasurfstella.com.br"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-tide hover:text-ocean focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide sm:justify-start"
+            >
+              {t(lang, 'visitLive')} ↗
+            </a>
+            <a
+              href={pathFor(lang, 'explicasurf')}
+              class="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-ink-soft hover:text-tide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide sm:justify-start"
+            >
+              {t(lang, 'readCase')} →
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <aside class="reveal-on-scroll mt-6 rounded-2xl border border-dashed border-line/90 bg-paper/60 px-5 py-4 sm:px-6 sm:py-5">
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="rounded-full border border-line px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted">
+          {t(lang, 'commercialBadge')}
+        </span>
+        <h3 class="font-display text-base font-bold text-ink-soft sm:text-lg">{t(lang, 'commercialTitle')}</h3>
+      </div>
+      <p class="mt-2 max-w-3xl text-sm leading-relaxed text-muted">{t(lang, 'commercialBlurb')}</p>
+      <p class="type-caption mt-2 italic">{t(lang, 'commercialNote')}</p>
+      <p class="type-caption mt-2">{t(lang, 'stackCommercial')}</p>
+    </aside>
   </div>
 </section>

@@ -4,17 +4,56 @@ import CasePage from '../../../components/CasePage.astro';
 const lang = 'en' as const;
 
 const uiShots = [
-  { src: '/images/explicasurf/explicasurf-home-stella.png', alt: 'ExplicaSurf home — Stella Maris', caption: 'Home — Stella Maris' },
-  { src: '/images/explicasurf/explicasurf-condicoes-mar.png', alt: 'Sea and weather conditions card', caption: 'Sea & weather conditions' },
-  { src: '/images/explicasurf/explicasurf-gerar-explicacao-ia.png', alt: 'Personalize and generate AI explanation', caption: 'Generate AI explanation' },
-  { src: '/images/explicasurf/explicasurf-card-explicacao-ui.png', alt: 'Personalized explanation card with TTS', caption: 'Personalized explanation + TTS' },
-  { src: '/images/explicasurf/explicasurf-grafico-ondas.png', alt: 'Wave height and period chart', caption: 'Wave chart' },
-  { src: '/images/explicasurf/explicasurf-grafico-mare.png', alt: 'Tide chart', caption: 'Tide chart' },
-  { src: '/images/explicasurf/explicasurf-login.png', alt: 'ExplicaSurf login screen', caption: 'Login' },
+  {
+    src: '/images/explicasurf/explicasurf-home-stella.png',
+    alt: 'ExplicaSurf home with Stella Maris selected',
+    caption:
+      'Home — Stella Maris as the reference spot. Surfers land on the day’s forecast without reading raw numbers alone.',
+  },
+  {
+    src: '/images/explicasurf/explicasurf-condicoes-mar.png',
+    alt: 'Sea and weather condition cards',
+    caption:
+      'Sea & weather conditions — swell, wind, and climate context in readable cards powered by the integrated APIs.',
+  },
+  {
+    src: '/images/explicasurf/explicasurf-gerar-explicacao-ia.png',
+    alt: 'Form to personalize and generate an AI explanation',
+    caption:
+      'Before generating AI text: users set level, stance, and experience so the explanation matches their profile.',
+  },
+  {
+    src: '/images/explicasurf/explicasurf-card-explicacao-ui.png',
+    alt: 'Personalized explanation card with TTS audio option',
+    caption:
+      'Personalized explanation with a domain structure (overview, impact, recommendation, safety) and optional TTS.',
+  },
+  {
+    src: '/images/explicasurf/explicasurf-grafico-ondas.png',
+    alt: 'Chart of wave height and period through the day',
+    caption:
+      'Wave chart — height and period hour by hour to plan the surf window visually.',
+  },
+  {
+    src: '/images/explicasurf/explicasurf-grafico-mare.png',
+    alt: 'Tide chart through the day',
+    caption:
+      'Tide chart — daily variation aligned with the local calibration used in the backend.',
+  },
+  {
+    src: '/images/explicasurf/explicasurf-login.png',
+    alt: 'ExplicaSurf login screen',
+    caption: 'Login — account access for personalization and registration used in the user evaluation.',
+  },
 ];
 
 const diagramShots = [
-  { src: '/images/explicasurf/explicasurf-arquitetura.png', alt: 'ExplicaSurf architecture diagram', caption: 'Architecture' },
+  {
+    src: '/images/explicasurf/explicasurf-arquitetura.png',
+    alt: 'ExplicaSurf architecture diagram',
+    caption:
+      'Client–server architecture: React on the frontend and Python/Flask on the backend integrating ocean APIs, tide data, and Gemini.',
+  },
 ];
 ---
 
@@ -28,10 +67,15 @@ const diagramShots = [
   problemKey="explProblem"
   solutionTitleKey="explSolutionTitle"
   solutionKeys={['explSolution1', 'explSolution2', 'explSolution3']}
-  honestTitleKey="explHonestTitle"
-  honestKey="explHonest"
+  buildTitleKey="explBuildTitle"
+  buildKeys={['explBuild1', 'explBuild2', 'explBuild3']}
+  evalTitleKey="explEvalTitle"
+  evalKeys={['explEval1', 'explEval2', 'explEval3']}
+  nextNoteKey="explNextNote"
   ctaHref="https://explicasurfstella.com.br"
   ctaLabelKey="visitLive"
+  articleHref="/docs/ExplicaSurf-Artigo.pdf"
+  articleLabelKey="readArticle"
   uiShots={uiShots}
   diagramShots={diagramShots}
   galleryTitle="Interface"
