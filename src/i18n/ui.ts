@@ -74,7 +74,7 @@ const ui = {
     readArticle: 'Ler artigo (PDF)',
     aboutTitle: 'Sobre',
     aboutBody:
-      'Sou Levi Davi Tude Silva, de Salvador, e construo software que alguém usa de verdade. Graduado em Ciência da Computação (UNIJORGE). No Espaço Byla mantenho o painel financeiro da academia (React, Node, Supabase). No ExplicaSurf Stella propus e entreguei uma solução com Python/Flask + Gemini que traduz previsões oceânicas para surfistas — TCC nota 10, com artigo científico e protótipo no ar.',
+      'Sou Levi Davi Tude Silva, de Salvador, e construo software que alguém usa de verdade. Graduando em Ciência da Computação (UNIJORGE). No Espaço Byla mantenho o painel financeiro da academia (React, Node, Supabase). No ExplicaSurf Stella propus e entreguei uma solução com Python/Flask + Gemini que traduz previsões oceânicas para surfistas — TCC nota 10, com artigo científico e protótipo no ar.',
     aboutAside:
       'Defesa do TCC ExplicaSurf (nota 10). Busco vaga full-stack, IA aplicada ou automações.',
     aboutLang: 'Inglês avançado (C1).',
@@ -195,7 +195,7 @@ const ui = {
     readArticle: 'Read paper (PDF)',
     aboutTitle: 'About',
     aboutBody:
-      "I'm Levi Davi Tude Silva, from Salvador, and I build software people actually use. B.Sc. in Computer Science (UNIJORGE). At Espaço Byla I maintain the academy's finance panel (React, Node, Supabase). With ExplicaSurf Stella I proposed and shipped a Python/Flask + Gemini solution that translates ocean forecasts for surfers — thesis graded 10/10, with a scientific paper and a live prototype.",
+      "I'm Levi Davi Tude Silva, from Salvador, and I build software people actually use. Computer Science undergraduate at UNIJORGE (degree expected by the end of the year). At Espaço Byla I maintain the academy's finance panel (React, Node, Supabase). With ExplicaSurf Stella I proposed and shipped a Python/Flask + Gemini solution that translates ocean forecasts for surfers — thesis graded 10/10, with a scientific paper and a live prototype.",
     aboutAside:
       'ExplicaSurf thesis defense (graded 10/10). Open to full-stack, applied AI, or automation roles.',
     aboutLang: 'English: advanced (C1).',
