@@ -76,7 +76,7 @@ const ui = {
     aboutBody:
       'Sou Levi Davi Tude Silva, de Salvador, e construo software que alguém usa de verdade. Graduando em Ciência da Computação (UNIJORGE). No Espaço Byla mantenho o painel financeiro da academia (React, Node, Supabase). No ExplicaSurf Stella propus e entreguei uma solução com Python/Flask + Gemini que traduz previsões oceânicas para surfistas — TCC nota 10, com artigo científico e protótipo no ar.',
     aboutAside:
-      'Defesa do TCC ExplicaSurf (nota 10). Busco vaga full-stack, IA aplicada ou automações.',
+      'Defesa do TCC ExplicaSurf. Busco vaga full-stack, IA aplicada ou automações.',
     aboutLang: 'Inglês avançado (C1).',
     skillsTitle: 'Stack principal',
     contactTitle: 'Vamos conversar',
@@ -197,7 +197,7 @@ const ui = {
     aboutBody:
       "I'm Levi Davi Tude Silva, from Salvador, and I build software people actually use. Computer Science undergraduate at UNIJORGE (degree expected by the end of the year). At Espaço Byla I maintain the academy's finance panel (React, Node, Supabase). With ExplicaSurf Stella I proposed and shipped a Python/Flask + Gemini solution that translates ocean forecasts for surfers — thesis graded 10/10, with a scientific paper and a live prototype.",
     aboutAside:
-      'ExplicaSurf thesis defense (graded 10/10). Open to full-stack, applied AI, or automation roles.',
+      'ExplicaSurf thesis defense. Open to full-stack, applied AI, or automation roles.',
     aboutLang: 'English: advanced (C1).',
     skillsTitle: 'Core stack',
     contactTitle: "Let's talk",
