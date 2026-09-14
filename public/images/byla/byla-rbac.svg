@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 520" width="840" height="520" role="img" aria-labelledby="title desc">
-  <title id="title">RBAC Byla ? Admin vs Secretaria</title>
+  <title id="title">RBAC Byla — Admin vs Secretaria</title>
   <desc id="desc">Comparativo de permissoes de navegacao: secretaria acessa fluxo operacional, aluguel de salas e perfil; admin acessa esses modulos mais financas, validacao, calendario, relatorios e visao geral.</desc>
   <defs>
     <style type="text/css"><![CDATA[
@@ -23,8 +23,8 @@
 
   <rect class="bg" width="840" height="520" rx="12"/>
 
-  <text class="title" x="28" y="34">RBAC por perfil ? navegacao do app</text>
-  <text class="subtitle" x="28" y="54">Rotas e menus por papel ? sem tokens, URLs internas ou politicas de banco</text>
+  <text class="title" x="28" y="34">RBAC por perfil — navegacao do app</text>
+  <text class="subtitle" x="28" y="54">Rotas e menus por papel · sem tokens, URLs internas ou politicas de banco</text>
 
   <g transform="translate(28, 72)">
     <rect width="380" height="400" rx="12" class="card"/>
@@ -89,5 +89,5 @@
     <text class="item" x="202" y="373" style="font-size:10.5px">Performance / atividade</text>
   </g>
 
-  <text class="footer" x="28" y="498">Diferenca de perfil na UI e nas rotas ? conteudo financeiro oficial restrito ao admin ? diagrama sem dados sensiveis</text>
+  <text class="footer" x="28" y="498">Diferenca de perfil na UI e nas rotas · conteudo financeiro oficial restrito ao admin · diagrama sem dados sensiveis</text>
 </svg>

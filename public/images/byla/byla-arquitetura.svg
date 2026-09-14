@@ -30,7 +30,7 @@
   <rect class="bg" width="840" height="560" rx="12"/>
 
   <text class="title" x="28" y="34">Arquitetura Byla Financeiro</text>
-  <text class="subtitle" x="28" y="54">Produto interno ? migracao gradual ? papeis distintos ? sem dados reais neste diagrama</text>
+  <text class="subtitle" x="28" y="54">Produto interno · migracao gradual · papeis distintos · sem dados reais neste diagrama</text>
 
   <g transform="translate(380, 22)">
     <rect x="0" y="0" width="14" height="10" rx="2" fill="#e6f5f3" stroke="#0f7f7a" stroke-width="1.5"/>
@@ -73,7 +73,7 @@
     <text class="box-title" x="16" y="28">Armazenamento</text>
     <text class="box-sub" x="16" y="48">Supabase + PostgreSQL</text>
     <text class="box-sub" x="16" y="66">Fonte primaria de dados</text>
-    <text class="label-muted" x="16" y="96">Auth ? perfil ? dominio ? RLS</text>
+    <text class="label-muted" x="16" y="96">Auth · perfil · dominio · RLS</text>
   </g>
 
   <path class="arrow a-atual" d="M248 140 H302"/>
@@ -82,12 +82,12 @@
   <text class="label-muted" x="534" y="128">persistencia</text>
 
   <path class="arrow a-auth" d="M138 200 V236 H702 V200"/>
-  <text class="label" x="290" y="230" fill="#0369a1">Auth / perfil (frontend ? Supabase)</text>
+  <text class="label" x="290" y="230" fill="#0369a1">Auth / perfil (frontend → Supabase)</text>
 
   <g transform="translate(28, 280)">
     <rect class="panel panel-auto" width="220" height="100" rx="10"/>
     <text class="box-title" x="16" y="28">Automacoes n8n</text>
-    <text class="box-sub" x="16" y="48">Jobs ? sync ? relatorios</text>
+    <text class="box-sub" x="16" y="48">Jobs · sync · relatorios</text>
     <text class="box-sub" x="16" y="66">Integracoes periodicas</text>
     <text class="label-muted" x="16" y="88">fora do app interativo</text>
   </g>
@@ -97,14 +97,14 @@
     <text class="box-title" x="16" y="28">Google Sheets</text>
     <text class="box-sub" x="16" y="48">Legado em migracao gradual</text>
     <text class="box-sub" x="16" y="66">Leitura/escrita controlada</text>
-    <text class="label-muted" x="16" y="88">via backend ? sem UI direta</text>
+    <text class="label-muted" x="16" y="88">via backend · sem UI direta</text>
   </g>
 
   <g transform="translate(592, 280)">
     <rect class="panel panel-atual" width="220" height="100" rx="10"/>
     <text class="box-title" x="16" y="28">Dominio (resumo)</text>
-    <text class="box-sub" x="16" y="48">Alunos ? modalidades</text>
-    <text class="box-sub" x="16" y="66">Pagamentos ? caixa</text>
+    <text class="box-sub" x="16" y="48">Alunos · modalidades</text>
+    <text class="box-sub" x="16" y="66">Pagamentos · caixa</text>
     <text class="label-muted" x="16" y="88">sem valores ou PII neste desenho</text>
   </g>
 
@@ -116,9 +116,9 @@
   <g transform="translate(28, 420)">
     <rect width="784" height="110" rx="10" fill="#ffffff" stroke="#d7e3e7" stroke-width="1.5"/>
     <text class="box-title" x="20" y="28">Acesso por perfil (camada de app)</text>
-    <text class="box-sub" x="20" y="52">Secretaria ? fluxo operacional, aluguel de salas e perfil</text>
-    <text class="box-sub" x="20" y="74">Admin ? financas, validacao, calendario, relatorios, visao geral + rotas da secretaria</text>
-    <text class="label-muted" x="20" y="96">Diagrama conceitual para portfolio ? dados ficticios nas telas de UI</text>
+    <text class="box-sub" x="20" y="52">Secretaria — fluxo operacional, aluguel de salas e perfil</text>
+    <text class="box-sub" x="20" y="74">Admin — financas, validacao, calendario, relatorios, visao geral + rotas da secretaria</text>
+    <text class="label-muted" x="20" y="96">Diagrama conceitual para portfolio · dados ficticios nas telas de UI</text>
     <rect x="560" y="24" width="90" height="22" rx="11" fill="#0f7f7a"/>
     <text class="badge-txt" x="574" y="39">Secretaria</text>
     <rect x="560" y="52" width="90" height="22" rx="11" fill="#0c3b47"/>

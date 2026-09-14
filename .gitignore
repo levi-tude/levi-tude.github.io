@@ -14,3 +14,7 @@ dist/
 
 # astro
 .astro/
+
+__pycache__/
+**/__pycache__/
+
