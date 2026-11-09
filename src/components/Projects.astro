@@ -106,6 +106,57 @@ const { lang } = Astro.props;
       </div>
     </article>
 
+    <article class="reveal-on-scroll mt-8 overflow-hidden rounded-3xl border border-line bg-surface transition hover:border-tide/50">
+      <div class="grid md:grid-cols-[1.1fr_0.9fr]">
+        <a
+          href={pathFor(lang, 'acdh')}
+          class="block border-b border-line bg-foam p-3 md:border-b-0 md:border-r focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide"
+        >
+          <div class="media-frame">
+            <img
+              src="/images/acdh/acdh-home.webp"
+              alt={lang === 'pt' ? 'Home do ACDH Eventos com a programação de eventos' : 'ACDH Eventos home with the event listing'}
+              class="img-lift aspect-[16/10] w-full object-cover object-top"
+              loading="lazy"
+              width="1280"
+              height="800"
+            />
+          </div>
+        </a>
+        <div class="flex flex-col justify-center p-5 sm:p-6 md:p-8">
+          <span class="text-xs font-semibold uppercase tracking-wider text-tide">{t(lang, 'acdhBadge')}</span>
+          <h3 class="mt-2 font-display text-xl font-bold text-ink sm:text-2xl">{t(lang, 'acdhTitle')}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-ink-soft sm:text-base">{t(lang, 'acdhBlurb')}</p>
+          <p class="mt-2 text-sm font-semibold text-ocean">{t(lang, 'acdhOutcome')}</p>
+          <p class="type-caption mt-3 leading-relaxed">{t(lang, 'stackAcdh')}</p>
+          <div class="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+            <a
+              href="https://acdheventos.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-tide hover:text-ocean focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide sm:justify-start"
+            >
+              {t(lang, 'visitLive')} ↗
+            </a>
+            <a
+              href={pathFor(lang, 'acdh')}
+              class="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-ink-soft hover:text-tide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide sm:justify-start"
+            >
+              {t(lang, 'readCase')} →
+            </a>
+            <a
+              href="https://github.com/levi-tude/espaco-byla-eventos"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex min-h-11 items-center justify-center text-sm font-semibold text-ink-soft hover:text-tide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide sm:justify-start"
+            >
+              GitHub ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
     <aside class="reveal-on-scroll mt-6 rounded-2xl border border-dashed border-line/90 bg-paper/60 px-5 py-4 sm:px-6 sm:py-5">
       <div class="flex flex-wrap items-center gap-2">
         <span class="rounded-full border border-line px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-muted">
