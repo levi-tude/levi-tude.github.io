@@ -1,0 +1,56 @@
+---
+import CasePage from '../../components/CasePage.astro';
+
+const lang = 'pt' as const;
+
+const uiShots = [
+  {
+    src: '/images/acdh/acdh-home.webp',
+    alt: 'Home do ACDH Eventos com a programação de eventos',
+    caption:
+      'Home — programação com os próximos eventos, sessões e preço a partir de, direto no site do Espaço Byla.',
+  },
+  {
+    src: '/images/acdh/acdh-evento.webp',
+    alt: 'Página de um evento com escolha de sessão e ingressos',
+    caption:
+      'Página do evento — o comprador escolhe a sessão e vê os ingressos e preços antes de seguir para o checkout.',
+  },
+  {
+    src: '/images/acdh/acdh-mobile.webp',
+    alt: 'Home do ACDH Eventos no celular',
+    caption: 'Mobile — a mesma vitrine pensada para quem compra pelo celular.',
+  },
+  {
+    src: '/images/acdh/acdh-quero-fazer-evento.webp',
+    alt: 'Formulário Quero fazer meu evento',
+    caption:
+      'Quero fazer meu evento — produtores enviam a ideia do evento para vender ingressos pela plataforma.',
+  },
+  {
+    src: '/images/acdh/acdh-area-organizador.webp',
+    alt: 'Tela de login da área do organizador',
+    caption: 'Área do organizador — acesso para quem cria eventos e acompanha vendas e portaria.',
+  },
+];
+---
+
+<CasePage
+  lang={lang}
+  titleKey="acdhPageTitle"
+  badgeKey="acdhBadge"
+  leadKey="acdhPageLead"
+  stackKey="stackAcdh"
+  problemTitleKey="acdhProblemTitle"
+  problemKey="acdhProblem"
+  solutionTitleKey="acdhSolutionTitle"
+  solutionKeys={['acdhSolution1', 'acdhSolution2', 'acdhSolution3']}
+  buildTitleKey="acdhBuildTitle"
+  buildKeys={['acdhBuild1', 'acdhBuild2', 'acdhBuild3']}
+  ctaHref="https://acdheventos.com.br/"
+  ctaLabelKey="acdhLive"
+  articleHref="https://github.com/levi-tude/espaco-byla-eventos"
+  articleLabelKey="acdhRepo"
+  uiShots={uiShots}
+  galleryTitle="Interface"
+/>

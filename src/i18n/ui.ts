@@ -12,11 +12,13 @@ export const routes = {
     home: '/',
     byla: '/projetos/byla/',
     explicasurf: '/projetos/explicasurf/',
+    acdh: '/projetos/acdh/',
   },
   en: {
     home: '/en/',
     byla: '/en/projects/byla/',
     explicasurf: '/en/projects/explicasurf/',
+    acdh: '/en/projects/acdh/',
   },
 } as const;
 
@@ -24,7 +26,7 @@ const ui = {
   pt: {
     metaTitle: 'Levi Davi Tude Silva — Desenvolvedor full-stack',
     metaDescription:
-      'Desenvolvedor full-stack júnior em Salvador. Byla Financeiro em produção, ExplicaSurf Stella (IA + previsões oceânicas) e automações.',
+      'Desenvolvedor full-stack júnior em Salvador. Byla Financeiro em produção, ACDH Eventos (venda de ingressos online), ExplicaSurf Stella (IA + previsões oceânicas) e automações.',
     navHome: 'Início',
     navProjects: 'Projetos',
     navExperience: 'Experiência',
@@ -37,7 +39,7 @@ const ui = {
     heroRole: 'Desenvolvedor full-stack júnior',
     heroLocation: 'Salvador, BA · remoto ou presencial/híbrido',
     heroLead:
-      'Entrego produtos web de ponta a ponta: o Byla Financeiro em produção na academia, e o ExplicaSurf Stella — app live que usa IA para explicar o mar a surfistas (TCC nota 10). Stack principal React, Node, Python/Flask e Supabase.',
+      'Entrego produtos web de ponta a ponta: o Byla Financeiro em produção na academia, o ACDH Eventos — plataforma de ingressos com checkout online e check-in por QR — e o ExplicaSurf Stella, app live que usa IA para explicar o mar a surfistas (TCC nota 10). Stack principal React, Next.js, Node, Python/Flask e Supabase.',
     heroCtaProjects: 'Ver projetos',
     heroCtaContact: 'Falar comigo',
     heroCtaCv: 'Baixar CV',
@@ -52,9 +54,11 @@ const ui = {
     expBullet1: 'Byla Financeiro em produção: React/TypeScript, Node/Express, Supabase.',
     expBullet2: 'Migração gradual Google Sheets → PostgreSQL, com RBAC admin/secretaria.',
     expBullet3: 'Automações n8n (IA, sync, WhatsApp) e módulos operacionais.',
+    expBullet4: 'Chat de IA para a gestão com Groq (Zero Data Retention) e mascaramento de nomes antes de os dados chegarem ao modelo.',
+    expBullet5: 'Testes automatizados do backend com Node test runner + Supertest.',
     projectsTitle: 'Projetos',
     projectsLead:
-      'Dois cases em destaque — produto em produção (Byla) e TCC publicado com app live (ExplicaSurf Stella). A evolução comercial multi-praia fica em segundo plano, ainda em desenvolvimento.',
+      'Três cases em destaque — produto em produção (Byla), plataforma de ingressos no ar (ACDH Eventos) e TCC publicado com app live (ExplicaSurf Stella). A evolução comercial multi-praia fica em segundo plano, ainda em desenvolvimento.',
     bylaBadge: 'Produção',
     bylaTitle: 'Byla Financeiro',
     bylaBlurb:
@@ -64,6 +68,11 @@ const ui = {
     explTitle: 'ExplicaSurf Stella',
     explBlurb:
       'TCC nota 10 com app live: interpreta swell, vento e maré com IA generativa e explica condições para surfistas em Stella Maris — fundamentado em ocean literacy.',
+    acdhBadge: 'No ar · set/2026 — presente',
+    acdhTitle: 'ACDH Eventos',
+    acdhBlurb:
+      'Plataforma de venda e controle de ingressos para os eventos e espetáculos do Espaço Byla: checkout online com PIX e cartão, ingresso com QR code por e-mail e check-in na portaria.',
+    acdhOutcome: 'No ar em acdheventos.com.br, reduzindo as taxas de marketplaces de ingressos externos.',
     commercialBadge: 'Em desenvolvimento',
     commercialTitle: 'ExplicaSurf (produto multi-praia)',
     commercialBlurb:
@@ -90,6 +99,7 @@ const ui = {
     stackByla: 'React · TypeScript · Node/Express · Supabase · n8n · Vercel · Render',
     stackExpl: 'React · Python/Flask · Gemini · Open-Meteo · WorldTides · Redis',
     stackCommercial: 'Next.js 16 · Supabase · Tailwind · OpenRouter/Gemini',
+    stackAcdh: 'Next.js · TypeScript · Supabase · Mercado Pago · Vitest · Cloud Run',
     bylaPageTitle: 'Byla Financeiro',
     bylaPageLead:
       'Sistema interno de gestão financeira e operacional do Espaço Byla — da planilha compartilhada ao painel em produção usado pela equipe.',
@@ -110,7 +120,37 @@ const ui = {
       'Segurança prática: JWT, perfis distintos, RLS e cuidados com dados sensíveis (incluindo minimização de PII em fluxos com IA).',
     bylaBuild3:
       'Os prints abaixo usam dados fictícios de demonstração — o sistema real roda com a operação da academia.',
+    bylaBuild4:
+      'Chat de IA para a gestão: perguntas sobre a operação respondidas com Groq (Zero Data Retention), com mascaramento de nomes antes de qualquer dado chegar ao modelo.',
+    bylaBuild5:
+      'Testes automatizados da API com o test runner nativo do Node + Supertest, cobrindo as rotas do backend antes de cada entrega.',
     bylaRepo: 'Código no GitHub',
+    acdhPageTitle: 'ACDH Eventos',
+    acdhPageLead:
+      'Plataforma de ingressos dos eventos do Espaço Byla (set/2026 — presente): da vitrine de eventos ao check-in por QR na portaria, com pagamento dentro do próprio site.',
+    acdhProblemTitle: 'Problema',
+    acdhProblem:
+      'Vender ingressos dos eventos do Espaço Byla por marketplaces externos significa pagar as taxas deles. O objetivo era vender, receber e controlar a entrada no próprio site, reduzindo esse custo.',
+    acdhSolutionTitle: 'O que a plataforma faz',
+    acdhSolution1:
+      'Vitrine pública com eventos, sessões e tipos de ingresso; checkout embutido no site com Mercado Pago (Checkout Bricks + API de Orders), aceitando PIX e cartão, e confirmação do pagamento por webhook.',
+    acdhSolution2:
+      'Depois do pagamento, o comprador recebe por e-mail (Resend) o link da página dos ingressos, com QR code e download em PDF; na portaria, a equipe faz o check-in lendo o QR.',
+    acdhSolution3:
+      'Painel interno da equipe (eventos, aprovações, organizadores, repasses e taxa de serviço) e área do organizador para criar eventos e acompanhar a portaria; lembretes automáticos para pedidos não concluídos.',
+    acdhBuildTitle: 'Como construí',
+    acdhBuild1:
+      'Next.js (App Router) + TypeScript + Tailwind, com Supabase (Auth, Postgres e RLS) para dados, autenticação e permissões.',
+    acdhBuild2:
+      'Testes automatizados com Vitest e CI no GitHub Actions; deploy automático no Google Cloud Run a cada merge na main, autenticado por Workload Identity Federation (sem chave JSON) e com segredos fora do repositório.',
+    acdhBuild3:
+      'Os prints abaixo são do site público no ar; o repositório não contém dados reais de compradores.',
+    acdhLive: 'Abrir site',
+    acdhRepo: 'Código no GitHub',
+    certTitle: 'Certificação',
+    certName: 'Getting Started with Generative AI',
+    certIssuer: 'IBM · emitido em ago/2026',
+    certCta: 'Ver credencial',
     explPageTitle: 'ExplicaSurf Stella',
     explPageLead:
       'TCC em Ciência da Computação (UNIJORGE), nota 10: aplicação web live que interpreta previsões oceânicas e climáticas e as explica com IA para surfistas em Stella Maris.',
@@ -145,7 +185,7 @@ const ui = {
   en: {
     metaTitle: 'Levi Davi Tude Silva — Full-stack developer',
     metaDescription:
-      'Junior full-stack developer in Salvador, Brazil. Byla Financeiro in production, ExplicaSurf Stella (AI + ocean forecasts), and automations.',
+      'Junior full-stack developer in Salvador, Brazil. Byla Financeiro in production, ACDH Eventos (online ticketing), ExplicaSurf Stella (AI + ocean forecasts), and automations.',
     navHome: 'Home',
     navProjects: 'Projects',
     navExperience: 'Experience',
@@ -158,7 +198,7 @@ const ui = {
     heroRole: 'Junior full-stack developer',
     heroLocation: 'Salvador, Brazil · remote or on-site/hybrid',
     heroLead:
-      'I ship end-to-end web products: Byla Financeiro in production at an academy, and ExplicaSurf Stella — a live app that uses AI to explain the ocean to surfers (thesis graded 10/10). Core stack React, Node, Python/Flask, and Supabase.',
+      'I ship end-to-end web products: Byla Financeiro in production at an academy, ACDH Eventos — a ticketing platform with online checkout and QR check-in — and ExplicaSurf Stella, a live app that uses AI to explain the ocean to surfers (thesis graded 10/10). Core stack React, Next.js, Node, Python/Flask, and Supabase.',
     heroCtaProjects: 'See projects',
     heroCtaContact: 'Get in touch',
     heroCtaCv: 'Download CV',
@@ -173,9 +213,11 @@ const ui = {
     expBullet1: 'Byla Financeiro in production: React/TypeScript, Node/Express, Supabase.',
     expBullet2: 'Gradual Google Sheets → PostgreSQL migration, with admin/front-desk RBAC.',
     expBullet3: 'n8n automations (AI, sync, WhatsApp) and operational modules.',
+    expBullet4: 'AI chat for managers with Groq (Zero Data Retention) and name masking before data reaches the model.',
+    expBullet5: 'Automated backend tests with the Node test runner + Supertest.',
     projectsTitle: 'Projects',
     projectsLead:
-      'Two featured cases — a production product (Byla) and a published thesis with a live app (ExplicaSurf Stella). The multi-spot commercial evolution stays secondary and is still in development.',
+      'Three featured cases — a production product (Byla), a live ticketing platform (ACDH Eventos), and a published thesis with a live app (ExplicaSurf Stella). The multi-spot commercial evolution stays secondary and is still in development.',
     bylaBadge: 'Production',
     bylaTitle: 'Byla Financeiro',
     bylaBlurb:
@@ -185,6 +227,11 @@ const ui = {
     explTitle: 'ExplicaSurf Stella',
     explBlurb:
       'Thesis graded 10/10 with a live app: interprets swell, wind, and tide with generative AI and explains conditions for surfers at Stella Maris — grounded in ocean literacy.',
+    acdhBadge: 'Live · Sep 2026 — present',
+    acdhTitle: 'ACDH Eventos',
+    acdhBlurb:
+      'Ticket sales and control platform for Espaço Byla events and shows: online checkout with PIX and card, QR-code tickets by email, and check-in at the door.',
+    acdhOutcome: 'Live at acdheventos.com.br, cutting the fees of external ticket marketplaces.',
     commercialBadge: 'In development',
     commercialTitle: 'ExplicaSurf (multi-spot product)',
     commercialBlurb:
@@ -211,6 +258,7 @@ const ui = {
     stackByla: 'React · TypeScript · Node/Express · Supabase · n8n · Vercel · Render',
     stackExpl: 'React · Python/Flask · Gemini · Open-Meteo · WorldTides · Redis',
     stackCommercial: 'Next.js 16 · Supabase · Tailwind · OpenRouter/Gemini',
+    stackAcdh: 'Next.js · TypeScript · Supabase · Mercado Pago · Vitest · Cloud Run',
     bylaPageTitle: 'Byla Financeiro',
     bylaPageLead:
       'Internal financial and operations system for Espaço Byla — from shared spreadsheets to a production dashboard used by the team.',
@@ -231,7 +279,37 @@ const ui = {
       'Practical security: JWT, distinct roles, RLS, and care with sensitive data (including PII minimization in AI flows).',
     bylaBuild3:
       'Screenshots below use fictional demo data — the real system runs with the academy’s operations.',
+    bylaBuild4:
+      'AI chat for managers: questions about operations answered with Groq (Zero Data Retention), with names masked before any data reaches the model.',
+    bylaBuild5:
+      'Automated API tests with the native Node test runner + Supertest, covering backend routes before each release.',
     bylaRepo: 'Code on GitHub',
+    acdhPageTitle: 'ACDH Eventos',
+    acdhPageLead:
+      'Ticketing platform for Espaço Byla events (Sep 2026 — present): from the event listing to QR check-in at the door, with payment inside the site itself.',
+    acdhProblemTitle: 'Problem',
+    acdhProblem:
+      'Selling Espaço Byla tickets through external marketplaces means paying their fees. The goal was to sell, get paid, and control entry on our own site, cutting that cost.',
+    acdhSolutionTitle: 'What the platform does',
+    acdhSolution1:
+      'Public listing with events, sessions, and ticket types; checkout embedded in the site with Mercado Pago (Checkout Bricks + Orders API), accepting PIX and card, with payment confirmation via webhook.',
+    acdhSolution2:
+      'After payment, buyers get an email (Resend) linking to their ticket page, with a QR code and PDF download; at the door, staff check people in by scanning the QR.',
+    acdhSolution3:
+      'Internal staff panel (events, approvals, organizers, payouts, and service fee) and an organizer area to create events and follow the door; automatic reminders for unfinished orders.',
+    acdhBuildTitle: 'How I built it',
+    acdhBuild1:
+      'Next.js (App Router) + TypeScript + Tailwind, with Supabase (Auth, Postgres, and RLS) for data, authentication, and permissions.',
+    acdhBuild2:
+      'Automated tests with Vitest and CI on GitHub Actions; automatic deploy to Google Cloud Run on every merge to main, authenticated via Workload Identity Federation (no JSON key) and with secrets kept out of the repo.',
+    acdhBuild3:
+      'Screenshots below are from the live public site; the repository contains no real buyer data.',
+    acdhLive: 'Open live site',
+    acdhRepo: 'Code on GitHub',
+    certTitle: 'Certification',
+    certName: 'Getting Started with Generative AI',
+    certIssuer: 'IBM · issued Aug 2026',
+    certCta: 'View credential',
     explPageTitle: 'ExplicaSurf Stella',
     explPageLead:
       'Computer Science thesis (UNIJORGE), graded 10/10: a live web app that interprets ocean/weather forecasts and explains them with AI for surfers at Stella Maris.',

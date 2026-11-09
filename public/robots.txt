@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://levi-tude.github.io/sitemap-index.xml

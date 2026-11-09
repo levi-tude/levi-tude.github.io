@@ -19,10 +19,17 @@ const skills = [
   'PostgreSQL',
   'n8n',
   'Next.js',
+  'Vite',
+  'TanStack Query',
+  'Zod',
+  'Vitest',
   'Gemini',
+  'Groq',
+  'Mercado Pago',
   'Tailwind',
   'Vercel',
   'Render',
+  'Cloud Run',
 ];
 ---
 
@@ -58,6 +65,21 @@ const skills = [
           ))
         }
       </ul>
+      <h3 class="mt-8 text-xs font-semibold uppercase tracking-[0.16em] text-tide">
+        {t(lang, 'certTitle')}
+      </h3>
+      <a
+        href="https://www.credly.com/go/UDBMVxg9"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="mt-4 flex min-h-11 flex-col gap-1 rounded-2xl border border-line bg-paper px-4 py-3 transition hover:border-tide focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-tide sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+      >
+        <span>
+          <span class="block font-semibold text-ink">{t(lang, 'certName')}</span>
+          <span class="block text-sm text-muted">{t(lang, 'certIssuer')}</span>
+        </span>
+        <span class="text-sm font-semibold text-tide">{t(lang, 'certCta')} ↗</span>
+      </a>
     </div>
   </div>
 </section>
